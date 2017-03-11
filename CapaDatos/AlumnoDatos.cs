@@ -34,7 +34,7 @@ namespace CapaDatos
                 cmd.Parameters["@p_nombres"].Value = mcEntidad.nombres;
 
                 cmd.Parameters.Add(new SqlParameter("@@p_apellidos", SqlDbType.VarChar, 150));
-                cmd.Parameters["@p_apellidos"].Value = mcEntidad.npellidos;
+                cmd.Parameters["@p_apellidos"].Value = mcEntidad.napellidos;
 
                 cmd.Parameters.Add(new SqlParameter("@p_cedula", SqlDbType.VarChar, 16));
                 cmd.Parameters["@p_cedula"].Value = mcEntidad.cedula;
@@ -103,7 +103,7 @@ namespace CapaDatos
                 cmd.Parameters["@p_nombres"].Value = mcEntidad.nombres;
 
                 cmd.Parameters.Add(new SqlParameter("@@p_apellidos", SqlDbType.VarChar, 150));
-                cmd.Parameters["@p_apellidos"].Value = mcEntidad.npellidos;
+                cmd.Parameters["@p_apellidos"].Value = mcEntidad.napellidos;
 
                 cmd.Parameters.Add(new SqlParameter("@p_cedula", SqlDbType.VarChar, 16));
                 cmd.Parameters["@p_cedula"].Value = mcEntidad.cedula;

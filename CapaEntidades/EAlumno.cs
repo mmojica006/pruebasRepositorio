@@ -41,7 +41,7 @@ namespace CapaEntidades
             get { return Nombres; }
             set { Nombres = value; }
         }
-        public string npellidos
+        public string napellidos
         {
             get { return Apellidos; }
             set { Apellidos = value; }
