@@ -16,15 +16,17 @@ namespace CapaDatos
             {}
        public string getConex() 
         {
+
             string strConex = ConfigurationManager.ConnectionStrings["cnnString"].ConnectionString;
-           if (object.ReferenceEquals(strConex,string.Empty))
+            if (object.ReferenceEquals(strConex, string.Empty))
             {
                 return string.Empty;
             }
-           else
+            else
             {
                 return strConex;
             }
+          
 
         }
     }

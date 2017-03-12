@@ -19,8 +19,18 @@ namespace Interfaces
 
         private void registrarAlumnoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmAlumno menu = new frmAlumno();
-            menu.Show();
+            try
+            {
+                frmAlumno menu = new frmAlumno();
+                menu.Show();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Mensaje de Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+
+            }
+
+         
 
 
 

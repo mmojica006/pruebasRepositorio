@@ -44,12 +44,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.elTab1 = new Klik.Windows.Forms.v1.EntryLib.ELTab();
             this.elTabPage1 = new Klik.Windows.Forms.v1.EntryLib.ELTabPage();
+            this.dtpfNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.rbfemenino = new System.Windows.Forms.RadioButton();
+            this.rbmasculino = new System.Windows.Forms.RadioButton();
+            this.txtapellido = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.lblcedula = new System.Windows.Forms.Label();
-            this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.pictFoto = new System.Windows.Forms.PictureBox();
             this.txttelefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtcelular = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,11 +69,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtnombrePadre = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.txtapellido = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtcelular = new System.Windows.Forms.TextBox();
-            this.rbmasculino = new System.Windows.Forms.RadioButton();
-            this.rbfemenino = new System.Windows.Forms.RadioButton();
+            this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elContainer1)).BeginInit();
             this.elContainer1.SuspendLayout();
@@ -88,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elTabPage2)).BeginInit();
             this.elTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
             this.SuspendLayout();
             // 
             // kFormManager1
@@ -213,7 +215,7 @@
             // btnnuevo
             // 
             this.btnnuevo.BackgroundImageStyle.Alpha = 100;
-            this.btnnuevo.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnnuevo.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.btnnuevo.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnnuevo.BorderStyle.EdgeRadius = 7;
             this.btnnuevo.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
@@ -308,12 +310,12 @@
             // elTabPage1
             // 
             this.elTabPage1.CaptionTextStyle.Text = "ALUMNO";
+            this.elTabPage1.Controls.Add(this.dtpfNacimiento);
             this.elTabPage1.Controls.Add(this.rbfemenino);
             this.elTabPage1.Controls.Add(this.rbmasculino);
             this.elTabPage1.Controls.Add(this.txtapellido);
             this.elTabPage1.Controls.Add(this.label20);
             this.elTabPage1.Controls.Add(this.lblcedula);
-            this.elTabPage1.Controls.Add(this.txtFechaNacimiento);
             this.elTabPage1.Controls.Add(this.label9);
             this.elTabPage1.Controls.Add(this.pictFoto);
             this.elTabPage1.Controls.Add(this.txttelefono);
@@ -330,6 +332,51 @@
             this.elTabPage1.Name = "elTabPage1";
             this.elTabPage1.Size = new System.Drawing.Size(951, 226);
             // 
+            // dtpfNacimiento
+            // 
+            this.dtpfNacimiento.Location = new System.Drawing.Point(474, 24);
+            this.dtpfNacimiento.Name = "dtpfNacimiento";
+            this.dtpfNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpfNacimiento.TabIndex = 40;
+            // 
+            // rbfemenino
+            // 
+            this.rbfemenino.AutoSize = true;
+            this.rbfemenino.Location = new System.Drawing.Point(582, 51);
+            this.rbfemenino.Name = "rbfemenino";
+            this.rbfemenino.Size = new System.Drawing.Size(71, 17);
+            this.rbfemenino.TabIndex = 38;
+            this.rbfemenino.TabStop = true;
+            this.rbfemenino.Text = "Femenino";
+            this.rbfemenino.UseVisualStyleBackColor = true;
+            // 
+            // rbmasculino
+            // 
+            this.rbmasculino.AutoSize = true;
+            this.rbmasculino.Location = new System.Drawing.Point(474, 51);
+            this.rbmasculino.Name = "rbmasculino";
+            this.rbmasculino.Size = new System.Drawing.Size(73, 17);
+            this.rbmasculino.TabIndex = 37;
+            this.rbmasculino.TabStop = true;
+            this.rbmasculino.Text = "Masculino";
+            this.rbmasculino.UseVisualStyleBackColor = true;
+            // 
+            // txtapellido
+            // 
+            this.txtapellido.Location = new System.Drawing.Point(115, 83);
+            this.txtapellido.Name = "txtapellido";
+            this.txtapellido.Size = new System.Drawing.Size(266, 20);
+            this.txtapellido.TabIndex = 36;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(32, 83);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(44, 13);
+            this.label20.TabIndex = 35;
+            this.label20.Text = "Apellido";
+            // 
             // lblcedula
             // 
             this.lblcedula.AutoSize = true;
@@ -338,13 +385,6 @@
             this.lblcedula.Size = new System.Drawing.Size(31, 13);
             this.lblcedula.TabIndex = 28;
             this.lblcedula.Text = "Sexo";
-            // 
-            // txtFechaNacimiento
-            // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(474, 24);
-            this.txtFechaNacimiento.Name = "txtFechaNacimiento";
-            this.txtFechaNacimiento.Size = new System.Drawing.Size(238, 20);
-            this.txtFechaNacimiento.TabIndex = 27;
             // 
             // label9
             // 
@@ -357,13 +397,14 @@
             // 
             // pictFoto
             // 
-            this.pictFoto.Image = ((System.Drawing.Image)(resources.GetObject("pictFoto.Image")));
             this.pictFoto.Location = new System.Drawing.Point(734, 17);
             this.pictFoto.Name = "pictFoto";
             this.pictFoto.Size = new System.Drawing.Size(214, 192);
             this.pictFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictFoto.TabIndex = 25;
             this.pictFoto.TabStop = false;
+            this.pictFoto.Click += new System.EventHandler(this.pictFoto_Click);
+            this.pictFoto.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictFoto_MouseMove);
             // 
             // txttelefono
             // 
@@ -381,6 +422,13 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "Teléfono";
             // 
+            // txtcelular
+            // 
+            this.txtcelular.Location = new System.Drawing.Point(114, 115);
+            this.txtcelular.Name = "txtcelular";
+            this.txtcelular.Size = new System.Drawing.Size(266, 20);
+            this.txtcelular.TabIndex = 20;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -396,6 +444,7 @@
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(266, 20);
             this.txtnombre.TabIndex = 18;
+            this.txtnombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtnombre_Validating);
             // 
             // label3
             // 
@@ -500,50 +549,9 @@
             this.label17.TabIndex = 29;
             this.label17.Text = "Nombre Padre ";
             // 
-            // txtapellido
+            // epError
             // 
-            this.txtapellido.Location = new System.Drawing.Point(115, 83);
-            this.txtapellido.Name = "txtapellido";
-            this.txtapellido.Size = new System.Drawing.Size(266, 20);
-            this.txtapellido.TabIndex = 36;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(32, 83);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(44, 13);
-            this.label20.TabIndex = 35;
-            this.label20.Text = "Apellido";
-            // 
-            // txtcelular
-            // 
-            this.txtcelular.Location = new System.Drawing.Point(114, 115);
-            this.txtcelular.Name = "txtcelular";
-            this.txtcelular.Size = new System.Drawing.Size(266, 20);
-            this.txtcelular.TabIndex = 20;
-            // 
-            // rbmasculino
-            // 
-            this.rbmasculino.AutoSize = true;
-            this.rbmasculino.Location = new System.Drawing.Point(474, 51);
-            this.rbmasculino.Name = "rbmasculino";
-            this.rbmasculino.Size = new System.Drawing.Size(73, 17);
-            this.rbmasculino.TabIndex = 37;
-            this.rbmasculino.TabStop = true;
-            this.rbmasculino.Text = "Masculino";
-            this.rbmasculino.UseVisualStyleBackColor = true;
-            // 
-            // rbfemenino
-            // 
-            this.rbfemenino.AutoSize = true;
-            this.rbfemenino.Location = new System.Drawing.Point(582, 51);
-            this.rbfemenino.Name = "rbfemenino";
-            this.rbfemenino.Size = new System.Drawing.Size(71, 17);
-            this.rbfemenino.TabIndex = 38;
-            this.rbfemenino.TabStop = true;
-            this.rbfemenino.Text = "Femenino";
-            this.rbfemenino.UseVisualStyleBackColor = true;
+            this.epError.ContainerControl = this;
             // 
             // frmAlumno
             // 
@@ -578,6 +586,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.elTabPage2)).EndInit();
             this.elTabPage2.ResumeLayout(false);
             this.elTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -610,7 +619,6 @@
         private System.Windows.Forms.Label label1;
         private Klik.Windows.Forms.v1.EntryLib.ELTabPage elTabPage2;
         private System.Windows.Forms.Label lblcedula;
-        private System.Windows.Forms.TextBox txtFechaNacimiento;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtNombreMadre;
         private System.Windows.Forms.Label label16;
@@ -623,5 +631,7 @@
         private System.Windows.Forms.TextBox txtcelular;
         private System.Windows.Forms.RadioButton rbfemenino;
         private System.Windows.Forms.RadioButton rbmasculino;
+        private System.Windows.Forms.DateTimePicker dtpfNacimiento;
+        private System.Windows.Forms.ErrorProvider epError;
     }
 }

@@ -124,6 +124,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -141,7 +142,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\1056090.png" />
+    <Content Include="Images\blue_exit_delete_delete_12417.png" />
+    <Content Include="Images\bootloader_users_person_people_6080.png" />
+    <Content Include="Images\businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png" />
+    <Content Include="Images\business_application_addmale_useradd_insert_add_user_client_2312.png" />
+    <Content Include="Images\business_man_usersearch_thesearch_theclient_2356.png" />
+    <Content Include="Images\business_rankhistoryreport_therange_negocio_2345.png" />
+    <Content Include="Images\delete_delete_deleteusers_delete_male_user_maleclient_2348.png" />
+    <Content Include="Images\diskette_save_saveas_1514.png" />
+    <Content Include="Images\document_report_16751.png" />
+    <Content Include="Images\ic_attach_money_128_28210.png" />
+    <Content Include="Images\lupa.png" />
+    <Content Include="Images\Newfile_page_document_empty_6315.png" />
+    <Content Include="Images\new_add_user_16734.png" />
+    <Content Include="Images\New_Database_36862.png" />
+    <Content Include="Images\nino.png" />
+    <Content Include="Images\printer_6029.png" />
+    <Content Include="Images\printer_laserjet_hp_2527.png" />
+    <Content Include="Images\save.png" />
+    <Content Include="Images\search_find_lupa_21889.png" />
     <Content Include="Images\user_clients_14956.png" />
+    <None Include="Resources\usuario.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

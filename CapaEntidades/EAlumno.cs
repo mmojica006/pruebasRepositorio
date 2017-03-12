@@ -24,13 +24,16 @@ namespace CapaEntidades
         private byte[] Foto;
         private string Distrito;
         private string Estado;
+        private int Noresp;
+        private string MensageResp;
 
         #endregion
-        public EAlumnos ()
+        public EAlumnos ()               
             {
-
+            
             }
 
+   
         public int idAlumno
         {
             get { return IdAlumno; }
@@ -101,13 +104,25 @@ namespace CapaEntidades
     {
         get { return Distrito; }
         set { Distrito = value; }
-}
+    }
     public string dstado
     {
         get { return Estado; }
         set { Estado = value; }
     }
+        public int noresp
 
+        {
+            get { return Noresp; }
+            set { Noresp = value; }
+        }
+
+        public string mensageResp
+
+        {
+            get { return MensageResp; }
+            set { MensageResp = value; }
+        }
 
     }
 }

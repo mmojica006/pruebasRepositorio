@@ -33,7 +33,7 @@ namespace CapaDatos
                 cmd.Parameters.Add(new SqlParameter("@p_nombres", SqlDbType.VarChar, 150));
                 cmd.Parameters["@p_nombres"].Value = mcEntidad.nombres;
 
-                cmd.Parameters.Add(new SqlParameter("@@p_apellidos", SqlDbType.VarChar, 150));
+                cmd.Parameters.Add(new SqlParameter("@p_apellidos", SqlDbType.VarChar, 150));
                 cmd.Parameters["@p_apellidos"].Value = mcEntidad.napellidos;
 
                 cmd.Parameters.Add(new SqlParameter("@p_cedula", SqlDbType.VarChar, 16));
@@ -55,10 +55,7 @@ namespace CapaDatos
                 cmd.Parameters["@p_nombreApoderado"].Value = mcEntidad.nomApoderado;
 
                 cmd.Parameters.Add(new SqlParameter("@p_telefono", SqlDbType.VarChar, 10));
-                cmd.Parameters["@p_telefono"].Value = mcEntidad.telefono;
-
-                cmd.Parameters.Add(new SqlParameter("@p_telefono", SqlDbType.VarChar, 10));
-                cmd.Parameters["@p_telefono"].Value = mcEntidad.telefono;
+                cmd.Parameters["@p_telefono"].Value = mcEntidad.telefono;                     
 
                 cmd.Parameters.Add(new SqlParameter("@p_celular", SqlDbType.Int));
                 cmd.Parameters["@p_celular"].Value = mcEntidad.celular;
@@ -66,7 +63,7 @@ namespace CapaDatos
                 cmd.Parameters.Add(new SqlParameter("@p_direccion", SqlDbType.VarChar, 500));
                 cmd.Parameters["@p_direccion"].Value = mcEntidad.direccion;
 
-                cmd.Parameters.Add(new SqlParameter("@p_foto", SqlDbType.VarBinary));
+                cmd.Parameters.Add(new SqlParameter("@p_foto", SqlDbType.Image));
                 cmd.Parameters["@p_foto"].Value = mcEntidad.foto;
 
                 cnx.Open();
@@ -75,9 +72,11 @@ namespace CapaDatos
 
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
                 vexito = false;
+                mcEntidad.mensageResp = ex.Message;
+
             }
 
             finally
@@ -144,9 +143,10 @@ namespace CapaDatos
 
 
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
                 vexito = false;
+                mcEntidad.mensageResp = ex.Message;
             }
 
             finally
@@ -175,9 +175,10 @@ namespace CapaDatos
                 cmd.ExecuteNonQuery();
                 vexito = true;
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
                 vexito = false;
+                mcEntidad.mensageResp = ex.Message;
             }
             finally
             {
