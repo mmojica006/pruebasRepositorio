@@ -353,6 +353,7 @@
             // rbmasculino
             // 
             this.rbmasculino.AutoSize = true;
+            this.rbmasculino.Checked = true;
             this.rbmasculino.Location = new System.Drawing.Point(474, 51);
             this.rbmasculino.Name = "rbmasculino";
             this.rbmasculino.Size = new System.Drawing.Size(73, 17);
@@ -367,6 +368,7 @@
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(266, 20);
             this.txtapellido.TabIndex = 36;
+            this.txtapellido.Validating += new System.ComponentModel.CancelEventHandler(this.txtapellido_Validating);
             // 
             // label20
             // 
@@ -462,6 +464,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(598, 39);
             this.txtDireccion.TabIndex = 16;
+            this.txtDireccion.Validating += new System.ComponentModel.CancelEventHandler(this.txtDireccion_Validating);
             // 
             // label2
             // 
@@ -557,6 +560,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(997, 429);
             this.Controls.Add(this.elTab1);
             this.Controls.Add(this.elContainer1);

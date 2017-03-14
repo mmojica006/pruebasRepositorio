@@ -19,7 +19,7 @@ namespace CapaEntidades
         private string NomMadre;
         private string NomApoderado;
         private string Telefono;
-        private string Celular;
+        private int Celular;
         private string Direccion;
         private byte[] Foto;
         private string Distrito;
@@ -84,7 +84,7 @@ namespace CapaEntidades
         get { return Telefono; }
         set { Telefono = value; }
     }
-    public string celular
+    public int celular
     {
         get { return Celular; }
         set { Celular = value; }

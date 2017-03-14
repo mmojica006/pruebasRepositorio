@@ -64,7 +64,7 @@ namespace CapaDatos
                 cmd.Parameters["@p_direccion"].Value = mcEntidad.direccion;
 
                 cmd.Parameters.Add(new SqlParameter("@p_foto", SqlDbType.Image));
-                cmd.Parameters["@p_foto"].Value = mcEntidad.foto;
+                cmd.Parameters["@p_foto"].Value = mcEntidad.foto;//==String.Empty ? DBNull:mcEntidad.foto;
 
                 cnx.Open();
                 cmd.ExecuteNonQuery();

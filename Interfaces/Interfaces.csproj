@@ -98,6 +98,8 @@
     <Compile Include="frmMenus.Designer.cs">
       <DependentUpon>frmMenus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Utility.cs" />
+    <Compile Include="Helpers\Validation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAlumno.resx">

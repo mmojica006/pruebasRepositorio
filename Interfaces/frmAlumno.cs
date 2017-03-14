@@ -9,18 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaEntidades;
 using CapaNegocio;
+using Interfaces.Helpers;
 
 namespace Interfaces
 {
     public partial class frmAlumno : Form
     {
+        private string imgPath = String.Empty;
         AlumnoNegocio AlumnoNeg = new AlumnoNegocio();
         EAlumnos AlumnoEnti = new EAlumnos();
+        
 
         public frmAlumno()
         {
-            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
-            
+                     
             InitializeComponent();
           
             pictFoto.Image = Properties.Resources.usuario;
@@ -28,14 +30,17 @@ namespace Interfaces
 
         private void btnnuevo_Click(object sender, EventArgs e)
         {
-            if (this.ValidateChildren(ValidationConstraints.Enabled))
-            {
+            // the controls collection can be the whole form or just a panel or group
+            if (Validation.hasValidationErrors(this.Controls))
+                return;        
+
+           
                 try
                 {
                     AlumnoEnti.cedula = txtcedula.Text;
                     AlumnoEnti.nombres = txtnombre.Text;
                     AlumnoEnti.napellidos = txtapellido.Text;
-                    AlumnoEnti.celular = txtcelular.Text;
+                     AlumnoEnti.celular = Convert.ToInt32( txtcelular.Text);
                     AlumnoEnti.telefono = txttelefono.Text;
                     AlumnoEnti.direccion = txtDireccion.Text;
                     AlumnoEnti.fechaNac = Convert.ToDateTime(dtpfNacimiento.Text);
@@ -43,7 +48,7 @@ namespace Interfaces
                     AlumnoEnti.nomPadre = txtnombrePadre.Text;
                     AlumnoEnti.nomMadre = txtNombreMadre.Text;
                     AlumnoEnti.nomApoderado = txtApodreado.Text;
-                    AlumnoEnti.foto = null;
+                    AlumnoEnti.foto = Utility.ReadFile(imgPath!=String.Empty?imgPath:null);
 
                     if (!AlumnoNeg.insertarAlumno(AlumnoEnti))
                     {
@@ -54,25 +59,19 @@ namespace Interfaces
                     {
                         MessageBox.Show("Alumno ingresado correctamente", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                    }
-
-
-
-
+                    }    
                 }
                 catch (Exception ex)
                 {
-
-                }
+                MessageBox.Show(ex.Message, "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                MessageBox.Show("There are invalid controls on the form.");
-            }
+                       
         }
 
         private void pictFoto_Click(object sender, EventArgs e)
         {
+ 
+
             try
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -92,45 +91,56 @@ namespace Interfaces
                     pictFoto.Image = null;
                     pictFoto.BackgroundImageLayout = ImageLayout.Stretch;
                     pictFoto.BackgroundImage = img;
-                }
-
-                                                         
+                    imgPath = openFileDialog.FileName;
+                    
+                }                                     
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message,"Subir Foto",MessageBoxButtons.OK,MessageBoxIcon.Error);
                
-          }
-
-
-            
-
+          }  
         }
 
         private void pictFoto_MouseMove(object sender, MouseEventArgs e)
         {
             pictFoto.Cursor = Cursors.Hand;
-        }
-
-   
+        }    
 
         private void txtnombre_Validating(object sender, CancelEventArgs e)
         {
-            e.Cancel = string.IsNullOrEmpty(txtnombre.Text);
-            this.epError.SetError(txtnombre, "Nama Barang Harus Diisi..!!");
+            if (txtnombre.Text.Trim() == String.Empty)
+            {
+                epError.SetError(txtnombre, "El nombre es requerido");
+                e.Cancel = true;
+            }
+            else
+                epError.SetError(txtnombre, "");      
+   
+        }
 
+        private void txtapellido_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtapellido.Text.Trim() == String.Empty)
+            {
+                epError.SetError(txtapellido, "El nombre es requerido");
+                e.Cancel = true;
+            }
+            else
+                epError.SetError(txtapellido, "");   
 
+        }
 
-            //if (txtnombre.Text.Trim().Length == 0)
-            //{
-            //    epError.SetError(txtnombre, "Introducir el nombre...");
-            //    txtnombre.Focus();
-            //}
-            //else
-            //{
-            //    epError.Clear();
-            //}
+        private void txtDireccion_Validating(object sender, CancelEventArgs e)
+        {
+            if (txtDireccion.Text.Trim() == String.Empty)
+            {
+                epError.SetError(txtDireccion, "La dirección es requerida");
+                e.Cancel = true;
+            }
+            else
+                epError.SetError(txtDireccion, "");
 
         }
     }
