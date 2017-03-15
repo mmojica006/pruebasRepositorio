@@ -18,59 +18,32 @@ namespace Interfaces
         private string imgPath = String.Empty;
         AlumnoNegocio AlumnoNeg = new AlumnoNegocio();
         EAlumnos AlumnoEnti = new EAlumnos();
-        
+
 
         public frmAlumno()
         {
-                     
-            InitializeComponent();
           
+
+            InitializeComponent();
+
+            bloquearControles();
             pictFoto.Image = Properties.Resources.usuario;
         }
 
         private void btnnuevo_Click(object sender, EventArgs e)
         {
-            // the controls collection can be the whole form or just a panel or group
-            if (Validation.hasValidationErrors(this.Controls))
-                return;        
+            ActivarControles();
+            btnEliminar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnnuevo.Enabled = false;
 
-           
-                try
-                {
-                    AlumnoEnti.cedula = txtcedula.Text;
-                    AlumnoEnti.nombres = txtnombre.Text;
-                    AlumnoEnti.napellidos = txtapellido.Text;
-                     AlumnoEnti.celular = Convert.ToInt32( txtcelular.Text);
-                    AlumnoEnti.telefono = txttelefono.Text;
-                    AlumnoEnti.direccion = txtDireccion.Text;
-                    AlumnoEnti.fechaNac = Convert.ToDateTime(dtpfNacimiento.Text);
-                    AlumnoEnti.sexo = rbmasculino.Checked ? "M" : "F";
-                    AlumnoEnti.nomPadre = txtnombrePadre.Text;
-                    AlumnoEnti.nomMadre = txtNombreMadre.Text;
-                    AlumnoEnti.nomApoderado = txtApodreado.Text;
-                    AlumnoEnti.foto = Utility.ReadFile(imgPath!=String.Empty?imgPath:null);
+      
 
-                    if (!AlumnoNeg.insertarAlumno(AlumnoEnti))
-                    {
-                        MessageBox.Show(AlumnoEnti.mensageResp, "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Alumno ingresado correctamente", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                    }    
-                }
-                catch (Exception ex)
-                {
-                MessageBox.Show(ex.Message, "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-                       
         }
 
         private void pictFoto_Click(object sender, EventArgs e)
         {
- 
+
 
             try
             {
@@ -92,21 +65,21 @@ namespace Interfaces
                     pictFoto.BackgroundImageLayout = ImageLayout.Stretch;
                     pictFoto.BackgroundImage = img;
                     imgPath = openFileDialog.FileName;
-                    
-                }                                     
+
+                }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Subir Foto",MessageBoxButtons.OK,MessageBoxIcon.Error);
-               
-          }  
+                MessageBox.Show(ex.Message, "Subir Foto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void pictFoto_MouseMove(object sender, MouseEventArgs e)
         {
             pictFoto.Cursor = Cursors.Hand;
-        }    
+        }
 
         private void txtnombre_Validating(object sender, CancelEventArgs e)
         {
@@ -116,8 +89,8 @@ namespace Interfaces
                 e.Cancel = true;
             }
             else
-                epError.SetError(txtnombre, "");      
-   
+                epError.SetError(txtnombre, "");
+
         }
 
         private void txtapellido_Validating(object sender, CancelEventArgs e)
@@ -128,7 +101,7 @@ namespace Interfaces
                 e.Cancel = true;
             }
             else
-                epError.SetError(txtapellido, "");   
+                epError.SetError(txtapellido, "");
 
         }
 
@@ -142,6 +115,135 @@ namespace Interfaces
             else
                 epError.SetError(txtDireccion, "");
 
+        }
+
+        private void bloquearControles()
+        {
+            txtcedula.Enabled = false;
+            txtnombre.Enabled = false;
+            txtapellido.Enabled = false;
+            txtcelular.Enabled = false;
+            txttelefono.Enabled = false;
+            txtDireccion.Enabled = false;
+            txtnombrePadre.Enabled = false;
+            txtNombreMadre.Enabled = false;
+            txtApodreado.Enabled = false;
+
+            rbmasculino.Enabled = false;
+            rbfemenino.Enabled = false;
+            pictFoto.Enabled = false;
+
+            btnGuardar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnSalir.Enabled = false;
+
+
+        }
+
+        private void ActivarControles()
+        {
+            txtcedula.Enabled = true;
+            txtnombre.Enabled = true;
+            txtapellido.Enabled = true;
+            txtcelular.Enabled = true;
+            txttelefono.Enabled = true;
+            txtDireccion.Enabled = true;
+            txtnombrePadre.Enabled = true;
+            txtNombreMadre.Enabled = true;
+            txtApodreado.Enabled = true;
+
+            rbmasculino.Enabled = true;
+            rbfemenino.Enabled = true;
+            pictFoto.Enabled = true;
+
+            btnGuardar.Enabled = true;
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnSalir.Enabled = true;
+
+
+        }
+
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // This code snippet is from the SO thread linked above (by Ed S)
+        void ChangeEnabled(bool enabled)
+        {
+            foreach (Control c in this.Controls)
+            {
+                c.Enabled = enabled;
+            }
+        }
+        private void DisableControls(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                DisableControls(c);
+            }
+            con.Enabled = false;
+        }
+
+        private void EnableControls(Control con)
+        {
+            if (con != null)
+            {
+                con.Enabled = true;
+                EnableControls(con.Parent);
+            }
+
+
+
+
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            // the controls collection can be the whole form or just a panel or group
+            if (Validation.hasValidationErrors(this.Controls))
+                return;
+
+
+            try
+            {
+                AlumnoEnti.cedula = txtcedula.Text;
+                AlumnoEnti.nombres = txtnombre.Text;
+                AlumnoEnti.napellidos = txtapellido.Text;
+                AlumnoEnti.celular = Convert.ToInt32(txtcelular.Text);
+                AlumnoEnti.telefono = txttelefono.Text;
+                AlumnoEnti.direccion = txtDireccion.Text;
+                AlumnoEnti.fechaNac = Convert.ToDateTime(dtpfNacimiento.Text);
+                AlumnoEnti.sexo = rbmasculino.Checked ? "M" : "F";
+                AlumnoEnti.nomPadre = txtnombrePadre.Text;
+                AlumnoEnti.nomMadre = txtNombreMadre.Text;
+                AlumnoEnti.nomApoderado = txtApodreado.Text;
+                AlumnoEnti.foto = Utility.ReadFile(imgPath != String.Empty ? imgPath : null);
+
+                if (!AlumnoNeg.insertarAlumno(AlumnoEnti))
+                {
+                    MessageBox.Show(AlumnoEnti.mensageResp, "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    MessageBox.Show("Alumno ingresado correctamente", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
