@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CapaEntidades;
 using CapaDatos;
+using System.Data;
 
 namespace CapaNegocio
 {
@@ -23,6 +24,11 @@ namespace CapaNegocio
         public bool eliminarAlumno(EAlumnos alumNegocio)
         {
             return _AlumnoDatos.eliminarAlumno(alumNegocio);
+        }
+
+        public DataTable consultarAlumno(String parameter)
+        {
+            return _AlumnoDatos.ConsultarAlumno(parameter);
         }
 
 

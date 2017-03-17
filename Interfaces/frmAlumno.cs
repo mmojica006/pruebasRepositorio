@@ -168,6 +168,17 @@ namespace Interfaces
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            PopupBuscar_Alumno popup = new PopupBuscar_Alumno();
+            DialogResult dialogResult =  popup.ShowDialog(); 
+
+            if (dialogResult== DialogResult.OK)
+            {
+
+            } else if (dialogResult == DialogResult.Cancel)
+            {
+                MessageBox.Show("You clicked on Cancel"); 
+            }
+            popup.Dispose(); 
 
         }
 

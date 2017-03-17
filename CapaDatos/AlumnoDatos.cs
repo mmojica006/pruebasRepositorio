@@ -195,6 +195,30 @@ namespace CapaDatos
 
         }
 
+        public DataTable ConsultarAlumno(string parametro)
+        {
+            DataSet dts = new DataSet();
+            try
+            {
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pr_alumno_buscar";
+                cmd.Parameters.Add(new SqlParameter("@p_nombre", parametro));
+                SqlDataAdapter miada;
+                miada = new SqlDataAdapter(cmd);
+                miada.Fill(dts, "alumnos");
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cmd.Parameters.Clear();
+            }
+            return (dts.Tables["alumnos"]);
+        }
+
 
     }
 }

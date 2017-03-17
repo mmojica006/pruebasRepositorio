@@ -40,8 +40,6 @@
             this.btnnuevo = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.elGroupBox1 = new Klik.Windows.Forms.v1.EntryLib.ELGroupBox();
             this.btnBuscar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
-            this.txtAlumnoBuscar = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.elTab1 = new Klik.Windows.Forms.v1.EntryLib.ELTab();
             this.elTabPage1 = new Klik.Windows.Forms.v1.EntryLib.ELTabPage();
             this.dtpfNacimiento = new System.Windows.Forms.DateTimePicker();
@@ -196,7 +194,7 @@
             // btnGuardar
             // 
             this.btnGuardar.BackgroundImageStyle.Alpha = 100;
-            this.btnGuardar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnGuardar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnGuardar.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.BorderStyle.EdgeRadius = 7;
             this.btnGuardar.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
@@ -254,8 +252,6 @@
             this.elGroupBox1.CaptionStyle.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.elGroupBox1.CaptionStyle.TextStyle.TextType = Klik.Windows.Forms.v1.Common.TextTypes.BlockShadow;
             this.elGroupBox1.Controls.Add(this.btnBuscar);
-            this.elGroupBox1.Controls.Add(this.txtAlumnoBuscar);
-            this.elGroupBox1.Controls.Add(this.label7);
             this.elGroupBox1.Location = new System.Drawing.Point(31, 12);
             this.elGroupBox1.Name = "elGroupBox1";
             this.elGroupBox1.Padding = new System.Windows.Forms.Padding(4, 27, 4, 3);
@@ -282,22 +278,6 @@
             this.btnBuscar.TextStyle.Text = "Buscar";
             this.btnBuscar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // txtAlumnoBuscar
-            // 
-            this.txtAlumnoBuscar.Location = new System.Drawing.Point(105, 43);
-            this.txtAlumnoBuscar.Name = "txtAlumnoBuscar";
-            this.txtAlumnoBuscar.Size = new System.Drawing.Size(275, 20);
-            this.txtAlumnoBuscar.TabIndex = 4;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 43);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Alumno";
             // 
             // elTab1
             // 
@@ -582,7 +562,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnnuevo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.elGroupBox1)).EndInit();
             this.elGroupBox1.ResumeLayout(false);
-            this.elGroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.elTab1)).EndInit();
             this.elTab1.ResumeLayout(false);
@@ -610,8 +589,6 @@
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnnuevo;
         private Klik.Windows.Forms.v1.EntryLib.ELGroupBox elGroupBox1;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnBuscar;
-        private System.Windows.Forms.TextBox txtAlumnoBuscar;
-        private System.Windows.Forms.Label label7;
         private Klik.Windows.Forms.v1.EntryLib.ELTab elTab1;
         private Klik.Windows.Forms.v1.EntryLib.ELTabPage elTabPage1;
         private System.Windows.Forms.PictureBox pictFoto;

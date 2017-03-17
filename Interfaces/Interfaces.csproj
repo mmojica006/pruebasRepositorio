@@ -100,6 +100,12 @@
     </Compile>
     <Compile Include="Helpers\Utility.cs" />
     <Compile Include="Helpers\Validation.cs" />
+    <Compile Include="PopupBuscar_Alumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupBuscar_Alumno.Designer.cs">
+      <DependentUpon>PopupBuscar_Alumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAlumno.resx">
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenus.resx">
       <DependentUpon>frmMenus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupBuscar_Alumno.resx">
+      <DependentUpon>PopupBuscar_Alumno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -165,6 +174,7 @@
     <Content Include="Images\save.png" />
     <Content Include="Images\search_find_lupa_21889.png" />
     <Content Include="Images\user_clients_14956.png" />
+    <None Include="Resources\lupa.bmp" />
     <None Include="Resources\usuario.png" />
   </ItemGroup>
   <ItemGroup>
