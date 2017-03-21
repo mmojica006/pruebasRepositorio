@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using CapaEntidades;
 using CapaNegocio;
 using Interfaces.Helpers;
+using System.IO;
 
 namespace Interfaces
 {
+
     public partial class frmAlumno : Form
     {
+
         private string imgPath = String.Empty;
         AlumnoNegocio AlumnoNeg = new AlumnoNegocio();
         EAlumnos AlumnoEnti = new EAlumnos();
@@ -22,23 +25,109 @@ namespace Interfaces
 
         public frmAlumno()
         {
-          
-
-            InitializeComponent();
-
+                
+            InitializeComponent();   
             bloquearControles();
-            pictFoto.Image = Properties.Resources.usuario;
+            pictFoto.Image = Properties.Resources.usuario;     
+
         }
+
+        private void mostrarAlumnos(int idalumno)
+        {                     
+            try
+            {
+                Byte[] data = new Byte[0];
+
+
+                txtnombre.Text = buscarRegistro(idalumno, "Nombres");  
+                txtapellido.Text = buscarRegistro(idalumno, "Apellidos");
+                txtcedula.Text = buscarRegistro(idalumno, "Cedula"); 
+                txttelefono.Text = buscarRegistro(idalumno, "Telefono");
+                txtcelular.Text = buscarRegistro(idalumno, "Celular");
+                txtDireccion.Text = buscarRegistro(idalumno, "Direccion");
+                dtpfNacimiento.Value = Convert.ToDateTime(buscarRegistro(idalumno, "FechaNac"));
+                txtnombrePadre.Text = buscarRegistro(idalumno, "NomPadre");
+                txtNombreMadre.Text = buscarRegistro(idalumno, "NomMadre");             
+                byte[] imageData = getImage(idalumno, "Imagen");               
+                Image newImage;  
+                if (imageData !=null && imageData.Length > 0 )
+                {       
+                using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
+                {
+                    ms.Write(imageData, 0, imageData.Length);
+
+                  
+                    newImage = Image.FromStream(ms, true);
+                }
+                pictFoto.Image = newImage;
+                }
+                else
+                {
+                    pictFoto.Image = Properties.Resources.usuario;
+                }
+
+                var sexo = buscarRegistro(idalumno, "Sexo");
+                switch  (sexo)
+                    {
+                    case "M":
+                        rbmasculino.Checked=true;
+                        break;
+                    case "F":
+                        rbfemenino.Checked = true;
+                        break;   
+
+                }   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            } 
+
+        }
+        private string buscarRegistro(int idAlumno, string columna)
+        {
+            DataTable dt = new DataTable();
+            string Resultado=String.Empty;
+
+            try
+            { 
+            dt = AlumnoNeg.consultarAlumno(idAlumno, null);  
+            Resultado = (from DataRow dr in dt.Rows
+                         where (int)dr["IdAlumno"] == idAlumno
+                         select (string)dr[columna]).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }  
+            return Resultado;    
+        }
+        private byte[] getImage(int idAlumno, string columna)
+        {
+            DataTable dt = new DataTable();
+            byte[] Resultado = null;
+
+            try
+            {
+                dt = AlumnoNeg.consultarAlumno(idAlumno, null);
+                 Resultado = (from DataRow dr in dt.Rows
+                             where (int)dr["IdAlumno"] == idAlumno
+                             select (byte[])dr[columna]).FirstOrDefault();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return Resultado;
+        }
+
 
         private void btnnuevo_Click(object sender, EventArgs e)
         {
             ActivarControles();
             btnEliminar.Enabled = false;
             btnEditar.Enabled = false;
-            btnnuevo.Enabled = false;
-
-      
-
+            btnnuevo.Enabled = false;       
         }
 
         private void pictFoto_Click(object sender, EventArgs e)
@@ -169,16 +258,30 @@ namespace Interfaces
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             PopupBuscar_Alumno popup = new PopupBuscar_Alumno();
-            DialogResult dialogResult =  popup.ShowDialog(); 
+            DialogResult dialogResult = popup.ShowDialog();
 
-            if (dialogResult== DialogResult.OK)
+            if (dialogResult == DialogResult.OK)
             {
 
-            } else if (dialogResult == DialogResult.Cancel)
-            {
-                MessageBox.Show("You clicked on Cancel"); 
+                int idAlumno = popup.SelectedIdAlumno != 0 ? popup.SelectedIdAlumno : 0;
+                mostrarAlumnos(idAlumno);
+
+                //using (PopupBuscar_Alumno form2 = new PopupBuscar_Alumno())
+                //{
+                //    if (form2.ShowDialog() == DialogResult.OK)
+                //    {
+                //        int idAlumno = form2.SelectedIdAlumno != 0 ? form2.SelectedIdAlumno : 0;
+                //        mostrarAlumnos(idAlumno);
+                //    }
+
+                //}
+
             }
-            popup.Dispose(); 
+            else if (dialogResult == DialogResult.Cancel)
+            {
+                MessageBox.Show("You clicked on Cancel");
+            }
+            popup.Dispose();
 
         }
 

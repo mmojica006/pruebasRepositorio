@@ -14,6 +14,7 @@ namespace Interfaces
 {
     public partial class PopupBuscar_Alumno : Form
     {
+        public int SelectedIdAlumno { get; set; }
         AlumnoNegocio AlumnoNeg = new AlumnoNegocio();
         EAlumnos AlumnoEnti = new EAlumnos();
 
@@ -26,7 +27,7 @@ namespace Interfaces
         {
             if (txtPopalumno.Text!=String.Empty)
             {
-                dgvAlumno.DataSource = AlumnoNeg.consultarAlumno(txtPopalumno.Text.Trim());
+                dgvAlumno.DataSource = AlumnoNeg.consultarAlumno(0,txtPopalumno.Text.Trim());
               
             }
 
@@ -34,10 +35,10 @@ namespace Interfaces
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (dgvAlumno.DataBindings!=null)
+            if (dgvAlumno.DataSource!=null)
 
             {
-
+                SelectedIdAlumno =  Convert.ToInt32( this.dgvAlumno.CurrentRow.Cells[0].Value.ToString());
             }
 
         }

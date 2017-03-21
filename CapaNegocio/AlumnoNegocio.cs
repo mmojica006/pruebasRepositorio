@@ -26,9 +26,9 @@ namespace CapaNegocio
             return _AlumnoDatos.eliminarAlumno(alumNegocio);
         }
 
-        public DataTable consultarAlumno(String parameter)
+        public DataTable consultarAlumno(int idAlumno,String parameter)
         {
-            return _AlumnoDatos.ConsultarAlumno(parameter);
+            return _AlumnoDatos.ConsultarAlumno(idAlumno,parameter);
         }
 
 

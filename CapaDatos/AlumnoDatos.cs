@@ -195,7 +195,7 @@ namespace CapaDatos
 
         }
 
-        public DataTable ConsultarAlumno(string parametro)
+        public DataTable ConsultarAlumno(int idAlumno =0 ,string parametro=null)
         {
             DataSet dts = new DataSet();
             try
@@ -203,6 +203,7 @@ namespace CapaDatos
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "pr_alumno_buscar";
+                cmd.Parameters.Add(new SqlParameter("@p_idAlumno", idAlumno));
                 cmd.Parameters.Add(new SqlParameter("@p_nombre", parametro));
                 SqlDataAdapter miada;
                 miada = new SqlDataAdapter(cmd);
