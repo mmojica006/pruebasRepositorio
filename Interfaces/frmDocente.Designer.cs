@@ -421,6 +421,7 @@
             this.btnnuevo.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnnuevo.TextStyle.Text = "Nuevo";
             this.btnnuevo.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
             // frmDocente
             // 

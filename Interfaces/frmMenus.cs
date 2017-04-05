@@ -48,5 +48,24 @@ namespace Interfaces
             formMatPago.Show();
 
         }
+
+        private void conceptosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConceptos formConceptos = new frmConceptos();
+            formConceptos.Show();
+
+        }
+
+        private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDocente formDocente = new frmDocente();
+            formDocente.Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarios fromUsuario = new frmUsuarios();
+            fromUsuario.Show();
+        }
     }
 }

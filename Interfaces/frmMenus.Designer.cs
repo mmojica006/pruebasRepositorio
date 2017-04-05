@@ -32,20 +32,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenus));
             this.kFormManager1 = new Klik.Windows.Forms.v1.Common.KFormManager(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.label1 = new System.Windows.Forms.Label();
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.conceptosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagoDeMatriculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripciónMatriculasPagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.regitrarMatrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimirToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteDocentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reporteAlumnoMatriculasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.kFormManager1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,114 +61,14 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.alumnosToolStripMenuItem,
             this.docentesToolStripMenuItem,
+            this.pagosToolStripMenuItem,
             this.inscripciónMatriculasPagosToolStripMenuItem,
-            this.reportesToolStripMenuItem});
+            this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(928, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // alumnosToolStripMenuItem
-            // 
-            this.alumnosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registrarAlumnoToolStripMenuItem,
-            this.imprimirToolStripMenuItem});
-            this.alumnosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("alumnosToolStripMenuItem.Image")));
-            this.alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
-            this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
-            this.alumnosToolStripMenuItem.Text = "Alumnos";
-            // 
-            // registrarAlumnoToolStripMenuItem
-            // 
-            this.registrarAlumnoToolStripMenuItem.Name = "registrarAlumnoToolStripMenuItem";
-            this.registrarAlumnoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.registrarAlumnoToolStripMenuItem.Text = "Registrar Alumno";
-            this.registrarAlumnoToolStripMenuItem.Click += new System.EventHandler(this.registrarAlumnoToolStripMenuItem_Click);
-            // 
-            // imprimirToolStripMenuItem
-            // 
-            this.imprimirToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("imprimirToolStripMenuItem.Image")));
-            this.imprimirToolStripMenuItem.Name = "imprimirToolStripMenuItem";
-            this.imprimirToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.imprimirToolStripMenuItem.Text = "Imprimir";
-            // 
-            // docentesToolStripMenuItem
-            // 
-            this.docentesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoToolStripMenuItem,
-            this.imprimirToolStripMenuItem1});
-            this.docentesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("docentesToolStripMenuItem.Image")));
-            this.docentesToolStripMenuItem.Name = "docentesToolStripMenuItem";
-            this.docentesToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.docentesToolStripMenuItem.Text = "Docentes";
-            // 
-            // nuevoToolStripMenuItem
-            // 
-            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.nuevoToolStripMenuItem.Text = "Registrar Docente";
-            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
-            // 
-            // imprimirToolStripMenuItem1
-            // 
-            this.imprimirToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("imprimirToolStripMenuItem1.Image")));
-            this.imprimirToolStripMenuItem1.Name = "imprimirToolStripMenuItem1";
-            this.imprimirToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
-            this.imprimirToolStripMenuItem1.Text = "Imprimir";
-            // 
-            // inscripciónMatriculasPagosToolStripMenuItem
-            // 
-            this.inscripciónMatriculasPagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.regitrarMatrículaToolStripMenuItem,
-            this.imprimirToolStripMenuItem2});
-            this.inscripciónMatriculasPagosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inscripciónMatriculasPagosToolStripMenuItem.Image")));
-            this.inscripciónMatriculasPagosToolStripMenuItem.Name = "inscripciónMatriculasPagosToolStripMenuItem";
-            this.inscripciónMatriculasPagosToolStripMenuItem.Size = new System.Drawing.Size(188, 20);
-            this.inscripciónMatriculasPagosToolStripMenuItem.Text = "Inscripción Matriculas-Pagos";
-            // 
-            // regitrarMatrículaToolStripMenuItem
-            // 
-            this.regitrarMatrículaToolStripMenuItem.Name = "regitrarMatrículaToolStripMenuItem";
-            this.regitrarMatrículaToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
-            this.regitrarMatrículaToolStripMenuItem.Text = "Registrar Matrícula";
-            this.regitrarMatrículaToolStripMenuItem.Click += new System.EventHandler(this.regitrarMatrículaToolStripMenuItem_Click);
-            // 
-            // imprimirToolStripMenuItem2
-            // 
-            this.imprimirToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("imprimirToolStripMenuItem2.Image")));
-            this.imprimirToolStripMenuItem2.Name = "imprimirToolStripMenuItem2";
-            this.imprimirToolStripMenuItem2.Size = new System.Drawing.Size(173, 22);
-            this.imprimirToolStripMenuItem2.Text = "Imprimir";
-            // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reporteDocentesToolStripMenuItem,
-            this.reporteAlumnoToolStripMenuItem,
-            this.reporteAlumnoMatriculasToolStripMenuItem});
-            this.reportesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportesToolStripMenuItem.Image")));
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // reporteDocentesToolStripMenuItem
-            // 
-            this.reporteDocentesToolStripMenuItem.Name = "reporteDocentesToolStripMenuItem";
-            this.reporteDocentesToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.reporteDocentesToolStripMenuItem.Text = "Reporte Docentes";
-            // 
-            // reporteAlumnoToolStripMenuItem
-            // 
-            this.reporteAlumnoToolStripMenuItem.Name = "reporteAlumnoToolStripMenuItem";
-            this.reporteAlumnoToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.reporteAlumnoToolStripMenuItem.Text = "Reporte Alumno";
-            // 
-            // reporteAlumnoMatriculasToolStripMenuItem
-            // 
-            this.reporteAlumnoMatriculasToolStripMenuItem.Name = "reporteAlumnoMatriculasToolStripMenuItem";
-            this.reporteAlumnoMatriculasToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.reporteAlumnoMatriculasToolStripMenuItem.Text = "Reporte Alumno Matriculas";
             // 
             // label1
             // 
@@ -182,6 +82,107 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "COLEGIO PRIMERA IGLESIA DE CRISTO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // alumnosToolStripMenuItem
+            // 
+            this.alumnosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarAlumnoToolStripMenuItem,
+            this.conceptosToolStripMenuItem,
+            this.colaboradoresToolStripMenuItem,
+            this.usuariosToolStripMenuItem});
+            this.alumnosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("alumnosToolStripMenuItem.Image")));
+            this.alumnosToolStripMenuItem.Name = "alumnosToolStripMenuItem";
+            this.alumnosToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
+            this.alumnosToolStripMenuItem.Text = "Registros";
+            // 
+            // registrarAlumnoToolStripMenuItem
+            // 
+            this.registrarAlumnoToolStripMenuItem.Name = "registrarAlumnoToolStripMenuItem";
+            this.registrarAlumnoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.registrarAlumnoToolStripMenuItem.Text = "Registrar Alumno";
+            this.registrarAlumnoToolStripMenuItem.Click += new System.EventHandler(this.registrarAlumnoToolStripMenuItem_Click);
+            // 
+            // conceptosToolStripMenuItem
+            // 
+            this.conceptosToolStripMenuItem.Name = "conceptosToolStripMenuItem";
+            this.conceptosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.conceptosToolStripMenuItem.Text = "Conceptos";
+            this.conceptosToolStripMenuItem.Click += new System.EventHandler(this.conceptosToolStripMenuItem_Click);
+            // 
+            // colaboradoresToolStripMenuItem
+            // 
+            this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
+            this.colaboradoresToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.colaboradoresToolStripMenuItem.Text = "Colaboradores";
+            this.colaboradoresToolStripMenuItem.Click += new System.EventHandler(this.colaboradoresToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
+            // docentesToolStripMenuItem
+            // 
+            this.docentesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoToolStripMenuItem});
+            this.docentesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("docentesToolStripMenuItem.Image")));
+            this.docentesToolStripMenuItem.Name = "docentesToolStripMenuItem";
+            this.docentesToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.docentesToolStripMenuItem.Text = "Matriculas";
+            // 
+            // nuevoToolStripMenuItem
+            // 
+            this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.nuevoToolStripMenuItem.Text = "Lista de Matriculas";
+            this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
+            // 
+            // pagosToolStripMenuItem
+            // 
+            this.pagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pagoDeMatriculasToolStripMenuItem});
+            this.pagosToolStripMenuItem.Image = global::Interfaces.Properties.Resources.ic_attach_money_128_28210;
+            this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.pagosToolStripMenuItem.Text = "Pagos";
+            // 
+            // pagoDeMatriculasToolStripMenuItem
+            // 
+            this.pagoDeMatriculasToolStripMenuItem.Name = "pagoDeMatriculasToolStripMenuItem";
+            this.pagoDeMatriculasToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.pagoDeMatriculasToolStripMenuItem.Text = "Pago de Matriculas";
+            // 
+            // inscripciónMatriculasPagosToolStripMenuItem
+            // 
+            this.inscripciónMatriculasPagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.regitrarMatrículaToolStripMenuItem});
+            this.inscripciónMatriculasPagosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inscripciónMatriculasPagosToolStripMenuItem.Image")));
+            this.inscripciónMatriculasPagosToolStripMenuItem.Name = "inscripciónMatriculasPagosToolStripMenuItem";
+            this.inscripciónMatriculasPagosToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.inscripciónMatriculasPagosToolStripMenuItem.Text = "Consultas";
+            // 
+            // regitrarMatrículaToolStripMenuItem
+            // 
+            this.regitrarMatrículaToolStripMenuItem.Name = "regitrarMatrículaToolStripMenuItem";
+            this.regitrarMatrículaToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.regitrarMatrículaToolStripMenuItem.Text = "Consulta de Pagos";
+            this.regitrarMatrículaToolStripMenuItem.Click += new System.EventHandler(this.regitrarMatrículaToolStripMenuItem_Click);
+            // 
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.acercaToolStripMenuItem});
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // acercaToolStripMenuItem
+            // 
+            this.acercaToolStripMenuItem.Name = "acercaToolStripMenuItem";
+            this.acercaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.acercaToolStripMenuItem.Text = "Acerca";
             // 
             // frmMenus
             // 
@@ -209,17 +210,17 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem alumnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarAlumnoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem docentesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem inscripciónMatriculasPagosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem regitrarMatrículaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem imprimirToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteDocentesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteAlumnoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reporteAlumnoMatriculasToolStripMenuItem;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem conceptosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem colaboradoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagoDeMatriculasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem acercaToolStripMenuItem;
     }
 }

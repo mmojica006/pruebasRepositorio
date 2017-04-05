@@ -190,6 +190,7 @@
             this.btnEditar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnEditar.TextStyle.Text = "Editar";
             this.btnEditar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 

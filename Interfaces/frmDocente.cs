@@ -26,5 +26,10 @@ namespace Interfaces
         {
 
         }
+
+        private void btnnuevo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

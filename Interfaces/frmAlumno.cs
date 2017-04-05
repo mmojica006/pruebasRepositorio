@@ -124,6 +124,7 @@ namespace Interfaces
 
         private void btnnuevo_Click(object sender, EventArgs e)
         {
+            limpiar();
             ActivarControles();
             btnEliminar.Enabled = false;
             btnEditar.Enabled = false;
@@ -253,28 +254,37 @@ namespace Interfaces
 
 
         }
+        private void limpiar()
+        {
+            txtcedula.Text = String.Empty;
+            txtnombre.Text = String.Empty;
+            txtapellido.Text = String.Empty;
+            txtcelular.Text = String.Empty;
+            txttelefono.Text = String.Empty;
+            txtDireccion.Text = String.Empty;
+            txtnombrePadre.Text = String.Empty;
+            txtNombreMadre.Text = String.Empty;
+            txtApodreado.Text = String.Empty;
+            dtpfNacimiento.Value = DateTime.Now;
+            txtcedula.Focus();
+       
+        }
+
 
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             PopupBuscar_Alumno popup = new PopupBuscar_Alumno();
             DialogResult dialogResult = popup.ShowDialog();
+         
 
             if (dialogResult == DialogResult.OK)
             {
 
                 int idAlumno = popup.SelectedIdAlumno != 0 ? popup.SelectedIdAlumno : 0;
                 mostrarAlumnos(idAlumno);
-
-                //using (PopupBuscar_Alumno form2 = new PopupBuscar_Alumno())
-                //{
-                //    if (form2.ShowDialog() == DialogResult.OK)
-                //    {
-                //        int idAlumno = form2.SelectedIdAlumno != 0 ? form2.SelectedIdAlumno : 0;
-                //        mostrarAlumnos(idAlumno);
-                //    }
-
-                //}
+                btnEditar.Enabled = true;
+        
 
             }
             else if (dialogResult == DialogResult.Cancel)
@@ -340,6 +350,7 @@ namespace Interfaces
 
                 if (!AlumnoNeg.insertarAlumno(AlumnoEnti))
                 {
+                    bloquearControles();
                     MessageBox.Show(AlumnoEnti.mensageResp, "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
@@ -358,6 +369,41 @@ namespace Interfaces
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AlumnoEnti.cedula = txtcedula.Text;
+                AlumnoEnti.nombres = txtnombre.Text;
+                AlumnoEnti.napellidos = txtapellido.Text;
+                AlumnoEnti.celular = Convert.ToInt32(txtcelular.Text);
+                AlumnoEnti.telefono = txttelefono.Text;
+                AlumnoEnti.direccion = txtDireccion.Text;
+                AlumnoEnti.fechaNac = Convert.ToDateTime(dtpfNacimiento.Text);
+                AlumnoEnti.sexo = rbmasculino.Checked ? "M" : "F";
+                AlumnoEnti.nomPadre = txtnombrePadre.Text;
+                AlumnoEnti.nomMadre = txtNombreMadre.Text;
+                AlumnoEnti.nomApoderado = txtApodreado.Text;
+                AlumnoEnti.foto = Utility.ReadFile(imgPath != String.Empty ? imgPath : null);
+
+                if (!AlumnoNeg.actualizrAlumno(AlumnoEnti))
+                {
+                    MessageBox.Show(AlumnoEnti.mensageResp, "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    MessageBox.Show("Alumno ingresado correctamente", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

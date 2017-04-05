@@ -100,6 +100,7 @@
             this.btnCancelar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnCancelar.TextStyle.Text = "Cancelar";
             this.btnCancelar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
