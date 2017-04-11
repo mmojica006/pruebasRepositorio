@@ -28,9 +28,9 @@ namespace CapaNegocio
             return _conceptoDatos.eliminarConcepto(id);
         }
 
-        public DataTable listarconcepto()
+        public DataTable listarconcepto(int idConcepto=0)
         {
-            return _conceptoDatos.listarConcepto();
+            return _conceptoDatos.listarConcepto(idConcepto);
         }
 
 

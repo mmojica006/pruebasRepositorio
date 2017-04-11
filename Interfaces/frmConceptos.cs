@@ -15,13 +15,16 @@ namespace Interfaces
 {
     public partial class frmConceptos : Form
     {
+        public int selectedIdConcepto { get; set; }
+ 
         ConceptoNegocio conceptoNeg = new ConceptoNegocio();
         EConcepto econcepto = new EConcepto();
+
 
         public frmConceptos()
         {
             InitializeComponent();
-            gvConceptos.DataSource = conceptoNeg.listarconcepto();
+            gvConceptos.DataSource = conceptoNeg.listarconcepto(0);
         }
 
         private void btnnuevo_Click(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace Interfaces
             if (dialogResult == DialogResult.OK)
             {
 
-                gvConceptos.DataSource = conceptoNeg.listarconcepto();
+                gvConceptos.DataSource = conceptoNeg.listarconcepto(0);
 
 
             }
@@ -42,6 +45,23 @@ namespace Interfaces
             popUp.Dispose();
 
 
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            selectedIdConcepto = Convert.ToInt32(this.gvConceptos.CurrentRow.Cells[0].Value.ToString());
+            PopEditConcepto popEditConcepto = new PopEditConcepto(selectedIdConcepto);
+         
+
+
+
+            
+            popEditConcepto.ShowDialog();
+         
+
+            //  DialogResult dialogResult = popEditConcepto.ShowDialog(ref val);
+
+            popEditConcepto.Dispose();
         }
     }
 }

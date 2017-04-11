@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConceptos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kFormManager1 = new Klik.Windows.Forms.v1.Common.KFormManager(this.components);
             this.elPanel1 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.elPanel2 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.gvConceptos = new Klik.Windows.Forms.v1.EntryLib.ELDataGridView();
             this.btnSalir = new Klik.Windows.Forms.v1.EntryLib.ELButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnnuevo = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.btnGuardar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.btnEliminar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.btnEditar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
+            this.elPanel2 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.gvConceptos = new Klik.Windows.Forms.v1.EntryLib.ELDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.kFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel1)).BeginInit();
             this.elPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.elPanel2)).BeginInit();
-            this.elPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvConceptos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnnuevo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elPanel2)).BeginInit();
+            this.elPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvConceptos)).BeginInit();
             this.SuspendLayout();
             // 
             // kFormManager1
@@ -75,53 +75,6 @@
             this.elPanel1.Size = new System.Drawing.Size(152, 313);
             this.elPanel1.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "OPERACIONES";
-            // 
-            // elPanel2
-            // 
-            this.elPanel2.BackgroundStyle.GradientAngle = 45F;
-            this.elPanel2.Controls.Add(this.label2);
-            this.elPanel2.Controls.Add(this.gvConceptos);
-            this.elPanel2.Location = new System.Drawing.Point(12, 16);
-            this.elPanel2.Name = "elPanel2";
-            this.elPanel2.Size = new System.Drawing.Size(579, 312);
-            this.elPanel2.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "LISTA";
-            // 
-            // gvConceptos
-            // 
-            this.gvConceptos.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            this.gvConceptos.BackgroundStyle.SolidColor = System.Drawing.SystemColors.Window;
-            this.gvConceptos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvConceptos.DefaultCellStyle = dataGridViewCellStyle1;
-            this.gvConceptos.GridColor = System.Drawing.Color.LightGray;
-            this.gvConceptos.Location = new System.Drawing.Point(27, 47);
-            this.gvConceptos.Name = "gvConceptos";
-            this.gvConceptos.Size = new System.Drawing.Size(516, 215);
-            this.gvConceptos.TabIndex = 1;
-            // 
             // btnSalir
             // 
             this.btnSalir.BackgroundImageStyle.Alpha = 100;
@@ -141,6 +94,15 @@
             this.btnSalir.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnSalir.TextStyle.Text = "Salir";
             this.btnSalir.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "OPERACIONES";
             // 
             // btnnuevo
             // 
@@ -222,6 +184,45 @@
             this.btnEditar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnEditar.TextStyle.Text = "Modificar";
             this.btnEditar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // elPanel2
+            // 
+            this.elPanel2.BackgroundStyle.GradientAngle = 45F;
+            this.elPanel2.Controls.Add(this.label2);
+            this.elPanel2.Controls.Add(this.gvConceptos);
+            this.elPanel2.Location = new System.Drawing.Point(12, 16);
+            this.elPanel2.Name = "elPanel2";
+            this.elPanel2.Size = new System.Drawing.Size(579, 312);
+            this.elPanel2.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "LISTA";
+            // 
+            // gvConceptos
+            // 
+            this.gvConceptos.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            this.gvConceptos.BackgroundStyle.SolidColor = System.Drawing.SystemColors.Window;
+            this.gvConceptos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvConceptos.DefaultCellStyle = dataGridViewCellStyle1;
+            this.gvConceptos.GridColor = System.Drawing.Color.LightGray;
+            this.gvConceptos.Location = new System.Drawing.Point(27, 47);
+            this.gvConceptos.Name = "gvConceptos";
+            this.gvConceptos.Size = new System.Drawing.Size(516, 215);
+            this.gvConceptos.TabIndex = 1;
             // 
             // frmConceptos
             // 
@@ -237,15 +238,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.elPanel1)).EndInit();
             this.elPanel1.ResumeLayout(false);
             this.elPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.elPanel2)).EndInit();
-            this.elPanel2.ResumeLayout(false);
-            this.elPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvConceptos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnnuevo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elPanel2)).EndInit();
+            this.elPanel2.ResumeLayout(false);
+            this.elPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvConceptos)).EndInit();
             this.ResumeLayout(false);
 
         }

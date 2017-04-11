@@ -143,14 +143,15 @@ namespace CapaDatos
 
         }
 
-        public DataTable listarConcepto()
+        public DataTable listarConcepto(int idConcepto = 0)
         {
             DataSet dts = new DataSet();
             try
             {
                 cmd.Connection = cnx;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "pr_listar_Concepto";           
+                cmd.CommandText = "pr_listar_Concepto";
+                cmd.Parameters.Add(new SqlParameter("@p_idconcepto", idConcepto));
                 SqlDataAdapter miada;
                 miada = new SqlDataAdapter(cmd);
                 miada.Fill(dts, "data");
