@@ -16,7 +16,7 @@ namespace Interfaces
     public partial class frmConceptos : Form
     {
         public int selectedIdConcepto { get; set; }
- 
+
         ConceptoNegocio conceptoNeg = new ConceptoNegocio();
         EConcepto econcepto = new EConcepto();
 
@@ -40,7 +40,7 @@ namespace Interfaces
             }
             else if (dialogResult == DialogResult.Cancel)
             {
-                MessageBox.Show("You clicked on Cancel");
+               
             }
             popUp.Dispose();
 
@@ -51,17 +51,26 @@ namespace Interfaces
         {
             selectedIdConcepto = Convert.ToInt32(this.gvConceptos.CurrentRow.Cells[0].Value.ToString());
             PopEditConcepto popEditConcepto = new PopEditConcepto(selectedIdConcepto);
-         
+            DialogResult dialogResult = popEditConcepto.ShowDialog();
+
+           // popEditConcepto.ShowDialog();
+           if (dialogResult == DialogResult.OK)
+                {
+
+                gvConceptos.DataSource = conceptoNeg.listarconcepto(0);
+            }
 
 
 
-            
-            popEditConcepto.ShowDialog();
-         
+           
 
-            //  DialogResult dialogResult = popEditConcepto.ShowDialog(ref val);
+          //popEditConcepto.Dispose();
+        }
 
-            popEditConcepto.Dispose();
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

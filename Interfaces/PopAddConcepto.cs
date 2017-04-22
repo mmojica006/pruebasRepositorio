@@ -28,7 +28,7 @@ namespace Interfaces
         {
             if (Validation.hasValidationErrors(this.Controls))
             {
-              
+
                 this.DialogResult = DialogResult.None;
                 return;
             }
@@ -43,7 +43,7 @@ namespace Interfaces
                     econcepto.Precio = Convert.ToDecimal(txtprecio.Text);
                     if (conceptoNeg.AgregarConcepto(econcepto))
                     {
-                        MessageBox.Show("Concepto ingresado correctamente", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Concepto ingresado correctamente", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {

@@ -94,6 +94,7 @@
             this.btnSalir.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnSalir.TextStyle.Text = "Salir";
             this.btnSalir.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label1
             // 

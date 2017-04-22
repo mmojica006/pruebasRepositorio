@@ -156,6 +156,7 @@
             this.txtprecio.Name = "txtprecio";
             this.txtprecio.Size = new System.Drawing.Size(271, 20);
             this.txtprecio.TabIndex = 7;
+            this.txtprecio.Validating += new System.ComponentModel.CancelEventHandler(this.txtprecio_Validating);
             // 
             // txtdescripcion
             // 
@@ -163,6 +164,7 @@
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(271, 20);
             this.txtdescripcion.TabIndex = 6;
+            this.txtdescripcion.Validating += new System.ComponentModel.CancelEventHandler(this.txtdescripcion_Validating);
             // 
             // label3
             // 
