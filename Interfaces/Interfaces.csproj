@@ -68,6 +68,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAlumno.Designer.cs">
+      <DependentUpon>AddAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditAlumno.Designer.cs">
+      <DependentUpon>EditAlumno.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +97,12 @@
     </Compile>
     <Compile Include="frmDocente.Designer.cs">
       <DependentUpon>frmDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstudiantes.Designer.cs">
+      <DependentUpon>frmEstudiantes.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -132,6 +150,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddAlumno.resx">
+      <DependentUpon>AddAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAlumno.resx">
+      <DependentUpon>EditAlumno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAlumno.resx">
       <DependentUpon>frmAlumno.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocente.resx">
       <DependentUpon>frmDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstudiantes.resx">
+      <DependentUpon>frmEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

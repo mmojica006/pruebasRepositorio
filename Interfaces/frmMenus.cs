@@ -21,17 +21,14 @@ namespace Interfaces
         {
             try
             {
-                frmAlumno menu = new frmAlumno();
+                frmEstudiantes menu = new frmEstudiantes();
                 menu.Show();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,"Mensaje de Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
-         
-
 
 
         }
