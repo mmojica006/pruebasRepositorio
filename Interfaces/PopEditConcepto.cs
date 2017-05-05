@@ -32,7 +32,7 @@ namespace Interfaces
         private void obtenerConcepto(int id)
         {
             idconcepto = id;
-            frmConceptos frm = new frmConceptos();
+          //  frmConceptos frm = new frmConceptos();
             DataTable dt;
             txtdescripcion.Text = String.Empty;
             txtprecio.Text = String.Empty;

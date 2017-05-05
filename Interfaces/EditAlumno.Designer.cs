@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditAlumno));
             this.elTab1 = new Klik.Windows.Forms.v1.EntryLib.ELTab();
             this.elTabPage1 = new Klik.Windows.Forms.v1.EntryLib.ELTabPage();
@@ -59,6 +60,7 @@
             this.elContainer1 = new Klik.Windows.Forms.v1.EntryLib.ELContainer();
             this.btncancelar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.btnGuardar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
+            this.errProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.elTab1)).BeginInit();
             this.elTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elTabPage1)).BeginInit();
@@ -70,6 +72,7 @@
             this.elContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncancelar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // elTab1
@@ -144,6 +147,7 @@
             this.txtapellido.Name = "txtapellido";
             this.txtapellido.Size = new System.Drawing.Size(266, 20);
             this.txtapellido.TabIndex = 36;
+            this.txtapellido.Validating += new System.ComponentModel.CancelEventHandler(this.txtapellido_Validating);
             // 
             // label20
             // 
@@ -180,6 +184,7 @@
             this.pictFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictFoto.TabIndex = 25;
             this.pictFoto.TabStop = false;
+            this.pictFoto.Click += new System.EventHandler(this.pictFoto_Click);
             // 
             // txttelefono
             // 
@@ -219,6 +224,7 @@
             this.txtnombre.Name = "txtnombre";
             this.txtnombre.Size = new System.Drawing.Size(266, 20);
             this.txtnombre.TabIndex = 18;
+            this.txtnombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtnombre_Validating);
             // 
             // label3
             // 
@@ -236,6 +242,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(598, 39);
             this.txtDireccion.TabIndex = 16;
+            this.txtDireccion.Validating += new System.ComponentModel.CancelEventHandler(this.txtDireccion_Validating);
             // 
             // label2
             // 
@@ -374,6 +381,11 @@
             this.btnGuardar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnGuardar.TextStyle.Text = "Guardar";
             this.btnGuardar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // errProvider
+            // 
+            this.errProvider.ContainerControl = this;
             // 
             // EditAlumno
             // 
@@ -397,6 +409,7 @@
             this.elContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btncancelar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -433,5 +446,6 @@
         private Klik.Windows.Forms.v1.EntryLib.ELContainer elContainer1;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btncancelar;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnGuardar;
+        private System.Windows.Forms.ErrorProvider errProvider;
     }
 }

@@ -47,5 +47,20 @@ namespace Interfaces
             }
 
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            idAlumno = Convert.ToInt32(this.gvEstudiante.CurrentRow.Cells[0].Value.ToString(),null);
+            EditAlumno editAlumno = new EditAlumno(idAlumno > 0 ? idAlumno:0);
+            DialogResult dialogResult = editAlumno.ShowDialog();
+
+            if (dialogResult== DialogResult.OK)
+            {
+                gvEstudiante.DataSource = alumnoNeg.consultarAlumno(0, null);
+             
+            }
+
+
+        }
     }
 }
