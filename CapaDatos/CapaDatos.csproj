@@ -44,6 +44,7 @@
     <Compile Include="AlumnoDatos.cs" />
     <Compile Include="ConceptoDatos.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="empleadoDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

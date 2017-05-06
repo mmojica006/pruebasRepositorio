@@ -21,7 +21,7 @@ namespace CapaEntidades
         private string Telefono;
         private int Celular;
         private string Direccion;
-        private byte[] Foto;
+        private byte[] Foto=null;
         private string Distrito;
         private string Estado;
         private int Noresp;

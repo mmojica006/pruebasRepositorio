@@ -80,6 +80,12 @@
     <Compile Include="EditAlumno.Designer.cs">
       <DependentUpon>EditAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Empleado\empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleado\empleado.Designer.cs">
+      <DependentUpon>empleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditAlumno.resx">
       <DependentUpon>EditAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleado\empleado.resx">
+      <DependentUpon>empleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlumno.resx">
       <DependentUpon>frmAlumno.cs</DependentUpon>
