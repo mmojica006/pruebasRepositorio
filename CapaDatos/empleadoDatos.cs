@@ -88,6 +88,9 @@ namespace CapaDatos
 
             try
             {
+                cmd.Parameters.Add(new SqlParameter("@p_id", SqlDbType.Int));
+                cmd.Parameters["@p_id"].Value = _empleado.idEmpleado;
+
                 cmd.Parameters.Add(new SqlParameter("@p_nombre", SqlDbType.VarChar, 100));
                 cmd.Parameters["@p_nombre"].Value = _empleado.Nombre;
 
@@ -169,7 +172,7 @@ namespace CapaDatos
 
         }
 
-        public DataTable listarAlumno(int idEmpleado = 0)
+        public DataTable listarEmpleado(int idEmpleado = 0)
         {
             DataSet dts = new DataSet();
             try

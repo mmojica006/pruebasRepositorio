@@ -55,8 +55,8 @@ namespace Interfaces
 
         private void colaboradoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDocente formDocente = new frmDocente();
-            formDocente.Show();
+            Empleado.empleado formEmpleado = new Empleado.empleado();
+            formEmpleado.Show();
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
