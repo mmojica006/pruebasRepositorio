@@ -1,6 +1,6 @@
-﻿namespace Interfaces.Empleado
+﻿namespace Interfaces.nivel
 {
-    partial class empleado
+    partial class frmNivel
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(empleado));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNivel));
             this.elPanel2 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.gvEmpleado = new Klik.Windows.Forms.v1.EntryLib.ELDataGridView();
+            this.gvNivel = new Klik.Windows.Forms.v1.EntryLib.ELDataGridView();
             this.elPanel1 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
             this.btnSalir = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.btnEditar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel2)).BeginInit();
             this.elPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvEmpleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNivel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel1)).BeginInit();
             this.elPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
@@ -56,11 +56,11 @@
             // 
             this.elPanel2.BackgroundStyle.GradientAngle = 45F;
             this.elPanel2.Controls.Add(this.label2);
-            this.elPanel2.Controls.Add(this.gvEmpleado);
-            this.elPanel2.Location = new System.Drawing.Point(16, 12);
+            this.elPanel2.Controls.Add(this.gvNivel);
+            this.elPanel2.Location = new System.Drawing.Point(12, 12);
             this.elPanel2.Name = "elPanel2";
             this.elPanel2.Size = new System.Drawing.Size(579, 312);
-            this.elPanel2.TabIndex = 5;
+            this.elPanel2.TabIndex = 7;
             // 
             // label2
             // 
@@ -71,11 +71,11 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "LISTA";
             // 
-            // gvEmpleado
+            // gvNivel
             // 
-            this.gvEmpleado.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            this.gvEmpleado.BackgroundStyle.SolidColor = System.Drawing.SystemColors.Window;
-            this.gvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvNivel.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            this.gvNivel.BackgroundStyle.SolidColor = System.Drawing.SystemColors.Window;
+            this.gvNivel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,12 +83,12 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvEmpleado.DefaultCellStyle = dataGridViewCellStyle1;
-            this.gvEmpleado.GridColor = System.Drawing.Color.LightGray;
-            this.gvEmpleado.Location = new System.Drawing.Point(27, 47);
-            this.gvEmpleado.Name = "gvEmpleado";
-            this.gvEmpleado.Size = new System.Drawing.Size(516, 215);
-            this.gvEmpleado.TabIndex = 1;
+            this.gvNivel.DefaultCellStyle = dataGridViewCellStyle1;
+            this.gvNivel.GridColor = System.Drawing.Color.LightGray;
+            this.gvNivel.Location = new System.Drawing.Point(27, 47);
+            this.gvNivel.Name = "gvNivel";
+            this.gvNivel.Size = new System.Drawing.Size(516, 215);
+            this.gvNivel.TabIndex = 1;
             // 
             // elPanel1
             // 
@@ -99,10 +99,10 @@
             this.elPanel1.Controls.Add(this.btnGuardar);
             this.elPanel1.Controls.Add(this.btnEliminar);
             this.elPanel1.Controls.Add(this.btnEditar);
-            this.elPanel1.Location = new System.Drawing.Point(619, 12);
+            this.elPanel1.Location = new System.Drawing.Point(614, 12);
             this.elPanel1.Name = "elPanel1";
             this.elPanel1.Size = new System.Drawing.Size(152, 313);
-            this.elPanel1.TabIndex = 4;
+            this.elPanel1.TabIndex = 6;
             // 
             // btnSalir
             // 
@@ -213,21 +213,20 @@
             this.btnEditar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnEditar.TextStyle.Text = "Modificar";
             this.btnEditar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // empleado
+            // frmNivel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 336);
+            this.ClientSize = new System.Drawing.Size(781, 332);
             this.Controls.Add(this.elPanel2);
             this.Controls.Add(this.elPanel1);
-            this.Name = "empleado";
-            this.Text = "Empleado";
+            this.Name = "frmNivel";
+            this.Text = "Registro de Niveles";
             ((System.ComponentModel.ISupportInitialize)(this.elPanel2)).EndInit();
             this.elPanel2.ResumeLayout(false);
             this.elPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvEmpleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNivel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel1)).EndInit();
             this.elPanel1.ResumeLayout(false);
             this.elPanel1.PerformLayout();
@@ -244,7 +243,7 @@
 
         private Klik.Windows.Forms.v1.EntryLib.ELPanel elPanel2;
         private System.Windows.Forms.Label label2;
-        private Klik.Windows.Forms.v1.EntryLib.ELDataGridView gvEmpleado;
+        private Klik.Windows.Forms.v1.EntryLib.ELDataGridView gvNivel;
         private Klik.Windows.Forms.v1.EntryLib.ELPanel elPanel1;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnSalir;
         private System.Windows.Forms.Label label1;

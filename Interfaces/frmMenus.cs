@@ -64,5 +64,11 @@ namespace Interfaces
             frmUsuarios fromUsuario = new frmUsuarios();
             fromUsuario.Show();
         }
+
+        private void nivelesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            nivel.frmNivel _nivel = new nivel.frmNivel();
+            _nivel.Show();
+        }
     }
 }

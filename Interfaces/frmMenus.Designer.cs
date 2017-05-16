@@ -46,6 +46,7 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.nivelesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.kFormManager1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +78,7 @@
             this.alumnosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarAlumnoToolStripMenuItem,
             this.conceptosToolStripMenuItem,
+            this.nivelesToolStripMenuItem1,
             this.colaboradoresToolStripMenuItem,
             this.usuariosToolStripMenuItem});
             this.alumnosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("alumnosToolStripMenuItem.Image")));
@@ -186,6 +188,13 @@
             this.label1.Text = "COLEGIO PRIMERA IGLESIA DE CRISTO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // nivelesToolStripMenuItem1
+            // 
+            this.nivelesToolStripMenuItem1.Name = "nivelesToolStripMenuItem1";
+            this.nivelesToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
+            this.nivelesToolStripMenuItem1.Text = "Niveles";
+            this.nivelesToolStripMenuItem1.Click += new System.EventHandler(this.nivelesToolStripMenuItem1_Click);
+            // 
             // frmMenus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,5 +233,6 @@
         private System.Windows.Forms.ToolStripMenuItem pagoDeMatriculasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nivelesToolStripMenuItem1;
     }
 }

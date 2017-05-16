@@ -148,6 +148,18 @@
     </Compile>
     <Compile Include="Helpers\Utility.cs" />
     <Compile Include="Helpers\Validation.cs" />
+    <Compile Include="nivel\frmNivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nivel\frmNivel.Designer.cs">
+      <DependentUpon>frmNivel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nivel\registroNivel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nivel\registroNivel.Designer.cs">
+      <DependentUpon>registroNivel.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopAddConcepto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +218,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nivel\frmNivel.resx">
+      <DependentUpon>frmNivel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nivel\registroNivel.resx">
+      <DependentUpon>registroNivel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopAddConcepto.resx">
       <DependentUpon>PopAddConcepto.cs</DependentUpon>
