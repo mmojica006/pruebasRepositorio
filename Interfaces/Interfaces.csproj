@@ -148,6 +148,12 @@
     </Compile>
     <Compile Include="Helpers\Utility.cs" />
     <Compile Include="Helpers\Validation.cs" />
+    <Compile Include="nivel\buscarMaestro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nivel\buscarMaestro.Designer.cs">
+      <DependentUpon>buscarMaestro.cs</DependentUpon>
+    </Compile>
     <Compile Include="nivel\frmNivel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddAlumno.resx">
       <DependentUpon>AddAlumno.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="EditAlumno.resx">
       <DependentUpon>EditAlumno.cs</DependentUpon>
@@ -218,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nivel\buscarMaestro.resx">
+      <DependentUpon>buscarMaestro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nivel\frmNivel.resx">
       <DependentUpon>frmNivel.cs</DependentUpon>

@@ -33,17 +33,19 @@
             this.kFormManager1 = new Klik.Windows.Forms.v1.Common.KFormManager(this.components);
             this.elGroupBox1 = new Klik.Windows.Forms.v1.EntryLib.ELGroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtVacante = new System.Windows.Forms.TextBox();
             this.cmbOrden = new System.Windows.Forms.ComboBox();
             this.cmbGrado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmpleado = new System.Windows.Forms.TextBox();
             this.elPanel1 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
-            this.btnSalir = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSalir = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.btnnuevo = new Klik.Windows.Forms.v1.EntryLib.ELButton();
+            this.btnBuscar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elGroupBox1)).BeginInit();
             this.elGroupBox1.SuspendLayout();
@@ -51,6 +53,8 @@
             this.elPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnnuevo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // kFormManager1
@@ -77,14 +81,15 @@
             this.elGroupBox1.CaptionStyle.TextStyle.Text = "Nivel";
             this.elGroupBox1.CaptionStyle.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.elGroupBox1.CaptionStyle.TextStyle.TextType = Klik.Windows.Forms.v1.Common.TextTypes.BlockShadow;
+            this.elGroupBox1.Controls.Add(this.btnBuscar);
             this.elGroupBox1.Controls.Add(this.label5);
-            this.elGroupBox1.Controls.Add(this.textBox2);
+            this.elGroupBox1.Controls.Add(this.txtVacante);
             this.elGroupBox1.Controls.Add(this.cmbOrden);
             this.elGroupBox1.Controls.Add(this.cmbGrado);
             this.elGroupBox1.Controls.Add(this.label4);
             this.elGroupBox1.Controls.Add(this.label3);
             this.elGroupBox1.Controls.Add(this.label2);
-            this.elGroupBox1.Controls.Add(this.textBox1);
+            this.elGroupBox1.Controls.Add(this.txtEmpleado);
             this.elGroupBox1.Location = new System.Drawing.Point(12, 12);
             this.elGroupBox1.Name = "elGroupBox1";
             this.elGroupBox1.Padding = new System.Windows.Forms.Padding(4, 27, 4, 3);
@@ -100,12 +105,13 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Profesor";
             // 
-            // textBox2
+            // txtVacante
             // 
-            this.textBox2.Location = new System.Drawing.Point(346, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(53, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtVacante.Location = new System.Drawing.Point(346, 66);
+            this.txtVacante.Name = "txtVacante";
+            this.txtVacante.Size = new System.Drawing.Size(53, 20);
+            this.txtVacante.TabIndex = 7;
+            this.txtVacante.Text = "0";
             // 
             // cmbOrden
             // 
@@ -151,12 +157,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Grado de instrucción";
             // 
-            // textBox1
+            // txtEmpleado
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 119);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtEmpleado.Location = new System.Drawing.Point(43, 119);
+            this.txtEmpleado.Name = "txtEmpleado";
+            this.txtEmpleado.Size = new System.Drawing.Size(275, 20);
+            this.txtEmpleado.TabIndex = 1;
+            this.txtEmpleado.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmpleado_Validating);
             // 
             // elPanel1
             // 
@@ -168,6 +175,15 @@
             this.elPanel1.Name = "elPanel1";
             this.elPanel1.Size = new System.Drawing.Size(152, 207);
             this.elPanel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "OPERACIONES";
             // 
             // btnSalir
             // 
@@ -188,15 +204,6 @@
             this.btnSalir.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnSalir.TextStyle.Text = "Salir";
             this.btnSalir.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "OPERACIONES";
             // 
             // btnnuevo
             // 
@@ -219,6 +226,30 @@
             this.btnnuevo.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackgroundImageStyle.Alpha = 100;
+            this.btnBuscar.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.BorderStyle.EdgeRadius = 7;
+            this.btnBuscar.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnBuscar.DropDownArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            this.btnBuscar.FlashStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            this.btnBuscar.FlashStyle.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.btnBuscar.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBuscar.Location = new System.Drawing.Point(324, 119);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(53, 21);
+            this.btnBuscar.TabIndex = 10;
+            this.btnBuscar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            this.btnBuscar.TextStyle.Text = "...";
+            this.btnBuscar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // registroNivel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,6 +269,8 @@
             this.elPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnnuevo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,12 +284,14 @@
         private System.Windows.Forms.Label label1;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnnuevo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtVacante;
         private System.Windows.Forms.ComboBox cmbOrden;
         private System.Windows.Forms.ComboBox cmbGrado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmpleado;
+        private Klik.Windows.Forms.v1.EntryLib.ELButton btnBuscar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
