@@ -15,6 +15,8 @@ namespace Interfaces.nivel
 {
     public partial class registroNivel : Form
     {
+
+        public int idempleadoLocal { get; set; }
         Eempleado entEmp = new Eempleado();
         EmpleadoNegocio empNeg = new EmpleadoNegocio();
 
@@ -51,12 +53,18 @@ namespace Interfaces.nivel
                 else
                 {
 
-               if (nivelNeg.agregarNivel(entNivel))
+                entNivel.idTutor = idempleadoLocal;
+                entNivel.grado = cmbGrado.SelectedItem.ToString();
+                entNivel.orden = cmbOrden.SelectedItem.ToString();
+                entNivel.vacantes = Convert.ToInt32(txtVacante.Text);
+
+
+                if (nivelNeg.agregarNivel(entNivel))
                 {
                     MessageBox.Show("Nivel registrado", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }   else
                 {
-
+                    MessageBox.Show("Ha ocurrido un error", "Nuevo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
 
@@ -101,14 +109,9 @@ namespace Interfaces.nivel
             if (dialogResult==DialogResult.OK)
             {
 
-                int idEmpleado = buscarMaestro.selectedIdEmpleado;
+                 idempleadoLocal = buscarMaestro.selectedIdEmpleado;                  
 
-                entNivel.idTutor = idEmpleado;
-                entNivel.grado = cmbGrado.SelectedItem.ToString();
-                entNivel.orden = cmbOrden.SelectedItem.ToString();
-                entNivel.vacantes = Convert.ToInt32( txtVacante.Text);
-
-                DataTable dt = empNeg.listarEmpleado(idEmpleado);
+                DataTable dt = empNeg.listarEmpleado(idempleadoLocal);
 
                 string nombre = dt.Rows[0]["Nombres"].ToString()+ dt.Rows[0]["Apellidos"].ToString();
 

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNivel));
             this.elPanel2 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,7 +37,6 @@
             this.btnSalir = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.label1 = new System.Windows.Forms.Label();
             this.btnnuevo = new Klik.Windows.Forms.v1.EntryLib.ELButton();
-            this.btnGuardar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.btnEliminar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.btnEditar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel2)).BeginInit();
@@ -47,7 +46,6 @@
             this.elPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnnuevo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).BeginInit();
             this.SuspendLayout();
@@ -76,14 +74,14 @@
             this.gvNivel.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.gvNivel.BackgroundStyle.SolidColor = System.Drawing.SystemColors.Window;
             this.gvNivel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvNivel.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvNivel.DefaultCellStyle = dataGridViewCellStyle2;
             this.gvNivel.GridColor = System.Drawing.Color.LightGray;
             this.gvNivel.Location = new System.Drawing.Point(27, 47);
             this.gvNivel.Name = "gvNivel";
@@ -96,7 +94,6 @@
             this.elPanel1.Controls.Add(this.btnSalir);
             this.elPanel1.Controls.Add(this.label1);
             this.elPanel1.Controls.Add(this.btnnuevo);
-            this.elPanel1.Controls.Add(this.btnGuardar);
             this.elPanel1.Controls.Add(this.btnEliminar);
             this.elPanel1.Controls.Add(this.btnEditar);
             this.elPanel1.Location = new System.Drawing.Point(614, 12);
@@ -116,13 +113,14 @@
             this.btnSalir.FlashStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.btnSalir.FlashStyle.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
             this.btnSalir.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSalir.Location = new System.Drawing.Point(15, 248);
+            this.btnSalir.Location = new System.Drawing.Point(15, 201);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(120, 50);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnSalir.TextStyle.Text = "Salir";
             this.btnSalir.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label1
             // 
@@ -154,30 +152,10 @@
             this.btnnuevo.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackgroundImageStyle.Alpha = 100;
-            this.btnGuardar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnGuardar.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.BorderStyle.EdgeRadius = 7;
-            this.btnGuardar.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnGuardar.DropDownArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            this.btnGuardar.FlashStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            this.btnGuardar.FlashStyle.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.btnGuardar.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(15, 192);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(120, 50);
-            this.btnGuardar.TabIndex = 7;
-            this.btnGuardar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            this.btnGuardar.TextStyle.Text = "Actualizar";
-            this.btnGuardar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // btnEliminar
             // 
             this.btnEliminar.BackgroundImageStyle.Alpha = 100;
-            this.btnEliminar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnEliminar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnEliminar.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.BorderStyle.EdgeRadius = 7;
             this.btnEliminar.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
@@ -193,11 +171,12 @@
             this.btnEliminar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnEliminar.TextStyle.Text = "Eliminar";
             this.btnEliminar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
             this.btnEditar.BackgroundImageStyle.Alpha = 100;
-            this.btnEditar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnEditar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnEditar.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.BorderStyle.EdgeRadius = 7;
             this.btnEditar.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
@@ -213,6 +192,7 @@
             this.btnEditar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnEditar.TextStyle.Text = "Modificar";
             this.btnEditar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // frmNivel
             // 
@@ -232,7 +212,6 @@
             this.elPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnnuevo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             this.ResumeLayout(false);
@@ -248,7 +227,6 @@
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnSalir;
         private System.Windows.Forms.Label label1;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnnuevo;
-        private Klik.Windows.Forms.v1.EntryLib.ELButton btnGuardar;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnEliminar;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnEditar;
     }

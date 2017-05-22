@@ -126,6 +126,7 @@ namespace CapaDatos
             {
                 cmd.Parameters.Add(new SqlParameter("@p_idNivel", SqlDbType.Int));
                 cmd.Parameters["@p_idNivel"].Value = idNivel;
+                v_exito = true;
 
             }
             catch (SqlException ex)
