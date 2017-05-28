@@ -35,7 +35,7 @@ namespace Interfaces
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDocente formDocente = new frmDocente();
+            Matricula.frmMatricula formDocente = new Matricula.frmMatricula();
             formDocente.Show();
         }
 

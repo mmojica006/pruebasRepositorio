@@ -42,9 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlumnoDatos.cs" />
+    <Compile Include="CatalogoDatos.cs" />
     <Compile Include="ConceptoDatos.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="empleadoDatos.cs" />
+    <Compile Include="MatriculaDatos.cs" />
     <Compile Include="NivelesDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -31,6 +31,11 @@ namespace CapaNegocio
         {
             return _nivelesDatos.listarNivel(idNivel, descripion);
         }
+
+        public DataTable nivelCombo()
+        {
+            return _nivelesDatos.nivelCombo();
+        }
   
 
 

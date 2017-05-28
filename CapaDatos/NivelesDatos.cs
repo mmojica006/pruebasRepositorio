@@ -177,5 +177,31 @@ namespace CapaDatos
             return (dts.Tables["data"]);
         }
 
+        public DataTable nivelCombo(int idNivel = 0, string Descripcion = null)
+        {
+            DataSet dts = new DataSet();
+            try
+            {
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pr_nivel_list";         
+
+                SqlDataAdapter miada;
+                miada = new SqlDataAdapter(cmd);
+                miada.Fill(dts, "data");
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cmd.Parameters.Clear();
+            }
+            return (dts.Tables["data"]);
+        }
+
+
+
     }
 }

@@ -148,6 +148,18 @@
     </Compile>
     <Compile Include="Helpers\Utility.cs" />
     <Compile Include="Helpers\Validation.cs" />
+    <Compile Include="Matricula\addMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matricula\addMatricula.Designer.cs">
+      <DependentUpon>addMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matricula\frmMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matricula\frmMatricula.Designer.cs">
+      <DependentUpon>frmMatricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="nivel\buscarMaestro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +243,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matricula\addMatricula.resx">
+      <DependentUpon>addMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matricula\frmMatricula.resx">
+      <DependentUpon>frmMatricula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="nivel\buscarMaestro.resx">
       <DependentUpon>buscarMaestro.cs</DependentUpon>

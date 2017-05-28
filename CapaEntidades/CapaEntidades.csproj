@@ -43,6 +43,7 @@
     <Compile Include="EAlumno.cs" />
     <Compile Include="EConcepto.cs" />
     <Compile Include="Eempleado.cs" />
+    <Compile Include="EMatricula.cs" />
     <Compile Include="ENiveles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

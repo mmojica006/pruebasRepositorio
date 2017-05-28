@@ -1,6 +1,6 @@
-﻿namespace Interfaces.nivel
+﻿namespace Interfaces.Matricula
 {
-    partial class frmNivel
+    partial class frmMatricula
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNivel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMatricula));
             this.elPanel2 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbNivel = new System.Windows.Forms.ComboBox();
+            this.gvEmpleado = new Klik.Windows.Forms.v1.EntryLib.ELDataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.gvNivel = new Klik.Windows.Forms.v1.EntryLib.ELDataGridView();
             this.elPanel1 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
             this.btnSalir = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,7 +43,7 @@
             this.btnEditar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel2)).BeginInit();
             this.elPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvNivel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEmpleado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel1)).BeginInit();
             this.elPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
@@ -53,27 +55,36 @@
             // elPanel2
             // 
             this.elPanel2.BackgroundStyle.GradientAngle = 45F;
-            this.elPanel2.Controls.Add(this.label2);
-            this.elPanel2.Controls.Add(this.gvNivel);
-            this.elPanel2.Location = new System.Drawing.Point(12, 12);
+            this.elPanel2.Controls.Add(this.label3);
+            this.elPanel2.Controls.Add(this.cmbNivel);
+            this.elPanel2.Controls.Add(this.gvEmpleado);
+            this.elPanel2.Location = new System.Drawing.Point(34, 36);
             this.elPanel2.Name = "elPanel2";
-            this.elPanel2.Size = new System.Drawing.Size(579, 312);
+            this.elPanel2.Size = new System.Drawing.Size(579, 294);
             this.elPanel2.TabIndex = 7;
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "LISTA";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Búsqueda por niveles";
             // 
-            // gvNivel
+            // cmbNivel
             // 
-            this.gvNivel.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            this.gvNivel.BackgroundStyle.SolidColor = System.Drawing.SystemColors.Window;
-            this.gvNivel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cmbNivel.FormattingEnabled = true;
+            this.cmbNivel.Location = new System.Drawing.Point(132, 11);
+            this.cmbNivel.Name = "cmbNivel";
+            this.cmbNivel.Size = new System.Drawing.Size(421, 21);
+            this.cmbNivel.TabIndex = 6;
+            // 
+            // gvEmpleado
+            // 
+            this.gvEmpleado.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            this.gvEmpleado.BackgroundStyle.SolidColor = System.Drawing.SystemColors.Window;
+            this.gvEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -81,12 +92,21 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvNivel.DefaultCellStyle = dataGridViewCellStyle1;
-            this.gvNivel.GridColor = System.Drawing.Color.LightGray;
-            this.gvNivel.Location = new System.Drawing.Point(27, 47);
-            this.gvNivel.Name = "gvNivel";
-            this.gvNivel.Size = new System.Drawing.Size(516, 215);
-            this.gvNivel.TabIndex = 1;
+            this.gvEmpleado.DefaultCellStyle = dataGridViewCellStyle1;
+            this.gvEmpleado.GridColor = System.Drawing.Color.LightGray;
+            this.gvEmpleado.Location = new System.Drawing.Point(20, 38);
+            this.gvEmpleado.Name = "gvEmpleado";
+            this.gvEmpleado.Size = new System.Drawing.Size(533, 233);
+            this.gvEmpleado.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "LISTA";
             // 
             // elPanel1
             // 
@@ -96,9 +116,9 @@
             this.elPanel1.Controls.Add(this.btnnuevo);
             this.elPanel1.Controls.Add(this.btnEliminar);
             this.elPanel1.Controls.Add(this.btnEditar);
-            this.elPanel1.Location = new System.Drawing.Point(614, 12);
+            this.elPanel1.Location = new System.Drawing.Point(629, 36);
             this.elPanel1.Name = "elPanel1";
-            this.elPanel1.Size = new System.Drawing.Size(152, 313);
+            this.elPanel1.Size = new System.Drawing.Size(152, 294);
             this.elPanel1.TabIndex = 6;
             // 
             // btnSalir
@@ -113,14 +133,13 @@
             this.btnSalir.FlashStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.btnSalir.FlashStyle.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
             this.btnSalir.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSalir.Location = new System.Drawing.Point(15, 201);
+            this.btnSalir.Location = new System.Drawing.Point(15, 192);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(120, 50);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnSalir.TextStyle.Text = "Salir";
             this.btnSalir.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label1
             // 
@@ -134,7 +153,7 @@
             // btnnuevo
             // 
             this.btnnuevo.BackgroundImageStyle.Alpha = 100;
-            this.btnnuevo.BackgroundImageStyle.Image = global::Interfaces.Properties.Resources.usuario;
+            this.btnnuevo.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnnuevo.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnnuevo.BorderStyle.EdgeRadius = 7;
             this.btnnuevo.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
@@ -155,7 +174,7 @@
             // btnEliminar
             // 
             this.btnEliminar.BackgroundImageStyle.Alpha = 100;
-            this.btnEliminar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnEliminar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnEliminar.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.BorderStyle.EdgeRadius = 7;
             this.btnEliminar.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
@@ -171,12 +190,11 @@
             this.btnEliminar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnEliminar.TextStyle.Text = "Eliminar";
             this.btnEliminar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
             this.btnEditar.BackgroundImageStyle.Alpha = 100;
-            this.btnEditar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnEditar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnEditar.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.BorderStyle.EdgeRadius = 7;
             this.btnEditar.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
@@ -192,21 +210,21 @@
             this.btnEditar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnEditar.TextStyle.Text = "Modificar";
             this.btnEditar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // frmNivel
+            // frmMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 332);
+            this.ClientSize = new System.Drawing.Size(802, 347);
             this.Controls.Add(this.elPanel2);
             this.Controls.Add(this.elPanel1);
-            this.Name = "frmNivel";
-            this.Text = "Registro de Niveles";
+            this.Controls.Add(this.label2);
+            this.Name = "frmMatricula";
+            this.Text = "Lista de Alumnos Matriculados";
             ((System.ComponentModel.ISupportInitialize)(this.elPanel2)).EndInit();
             this.elPanel2.ResumeLayout(false);
             this.elPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvNivel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEmpleado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel1)).EndInit();
             this.elPanel1.ResumeLayout(false);
             this.elPanel1.PerformLayout();
@@ -215,14 +233,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEditar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Klik.Windows.Forms.v1.EntryLib.ELPanel elPanel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbNivel;
         private System.Windows.Forms.Label label2;
-        private Klik.Windows.Forms.v1.EntryLib.ELDataGridView gvNivel;
+        private Klik.Windows.Forms.v1.EntryLib.ELDataGridView gvEmpleado;
         private Klik.Windows.Forms.v1.EntryLib.ELPanel elPanel1;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnSalir;
         private System.Windows.Forms.Label label1;
