@@ -62,5 +62,10 @@ namespace Interfaces
 
 
         }
+
+        private void btnPopBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

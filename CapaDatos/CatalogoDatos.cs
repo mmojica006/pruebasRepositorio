@@ -24,29 +24,39 @@ namespace CapaDatos
             cnx = new SqlConnection(miConex.getConex());
         }
 
-        public DataTable consultarPperiodo()
+        public DataTable getCatalogo()
         {
-            DataSet dts = new DataSet();
-            try
+            DataTable dt = new DataTable();
+
+            string query = "select value from catalogo where id_value=10";
+            //Inicializa la conexión a la base de datos
+            using (SqlConnection connection = new SqlConnection(miConex.getConex()))
             {
-                cmd.Connection = cnx;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "pr_listar_Concepto";
-             
-                SqlDataAdapter miada;
-                miada = new SqlDataAdapter(cmd);
-                miada.Fill(dts, "data");
+                //Inicializa el comando que se va a ejecutar
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    //Se agregan los parámetros
+                  //  cmd.Parameters.AddWithValue("@FechaNacimiento", fechaNacimiento);
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        try
+                        {
+                            //Se abre la conexión
+                            cmd.Connection.Open();
+                            //Se cargan los datos en el DataTable
+                            da.Fill(dt);
+                        }
+                        catch (SqlException sqlEx)
+                        {
+                            string error = sqlEx.Message;
+                            throw;
+                        }
+                    }
+                }
             }
-            catch (SqlException ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                cmd.Parameters.Clear();
-            }
-            return (dts.Tables["data"]);
+            return dt;
         }
+           
 
 
 

@@ -103,6 +103,7 @@
             this.btnPopBuscar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnPopBuscar.TextStyle.Text = "Buscar";
             this.btnPopBuscar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPopBuscar.Click += new System.EventHandler(this.btnPopBuscar_Click);
             // 
             // label2
             // 

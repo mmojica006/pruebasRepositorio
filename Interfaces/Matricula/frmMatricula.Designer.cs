@@ -74,6 +74,7 @@
             // 
             // cmbNivel
             // 
+            this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivel.FormattingEnabled = true;
             this.cmbNivel.Location = new System.Drawing.Point(132, 11);
             this.cmbNivel.Name = "cmbNivel";

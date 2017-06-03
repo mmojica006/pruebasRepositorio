@@ -135,5 +135,10 @@ namespace Interfaces.Empleado
             else
                 errorProvider1.SetError(txtcedula, "");
         }
+
+        private void elRichLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

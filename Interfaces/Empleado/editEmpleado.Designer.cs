@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editEmpleado));
             this.elPanel2 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
             this.elRichLabel2 = new Klik.Windows.Forms.v1.EntryLib.ELRichLabel();
+            this.elButton1 = new Klik.Windows.Forms.v1.EntryLib.ELButton();
+            this.btnGuardar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.elPanel1 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,17 +51,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.elRichLabel1 = new Klik.Windows.Forms.v1.EntryLib.ELRichLabel();
-            this.elButton1 = new Klik.Windows.Forms.v1.EntryLib.ELButton();
-            this.btnGuardar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.elPanel2)).BeginInit();
             this.elPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elRichLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel1)).BeginInit();
             this.elPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elRichLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.elButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,50 @@
             this.elRichLabel2.Size = new System.Drawing.Size(85, 28);
             this.elRichLabel2.TabIndex = 5;
             this.elRichLabel2.Text = "Operaciones";
+            this.elRichLabel2.Click += new System.EventHandler(this.elRichLabel2_Click);
+            // 
+            // elButton1
+            // 
+            this.elButton1.BackgroundImageStyle.Alpha = 100;
+            this.elButton1.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.elButton1.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.elButton1.BorderStyle.EdgeRadius = 7;
+            this.elButton1.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
+            this.elButton1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.elButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.elButton1.DropDownArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            this.elButton1.FlashStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            this.elButton1.FlashStyle.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.elButton1.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.elButton1.Location = new System.Drawing.Point(31, 91);
+            this.elButton1.Name = "elButton1";
+            this.elButton1.Size = new System.Drawing.Size(96, 50);
+            this.elButton1.TabIndex = 4;
+            this.elButton1.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            this.elButton1.TextStyle.Text = "Salir";
+            this.elButton1.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackgroundImageStyle.Alpha = 100;
+            this.btnGuardar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnGuardar.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.BorderStyle.EdgeRadius = 7;
+            this.btnGuardar.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnGuardar.DropDownArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            this.btnGuardar.FlashStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            this.btnGuardar.FlashStyle.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.btnGuardar.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGuardar.Location = new System.Drawing.Point(31, 37);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(96, 50);
+            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
+            this.btnGuardar.TextStyle.Text = "Guardar";
+            this.btnGuardar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // elPanel1
             // 
@@ -246,49 +290,6 @@
             this.elRichLabel1.TabIndex = 2;
             this.elRichLabel1.Text = "Actualización de datos";
             // 
-            // elButton1
-            // 
-            this.elButton1.BackgroundImageStyle.Alpha = 100;
-            this.elButton1.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.elButton1.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.elButton1.BorderStyle.EdgeRadius = 7;
-            this.elButton1.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
-            this.elButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.elButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.elButton1.DropDownArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            this.elButton1.FlashStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            this.elButton1.FlashStyle.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.elButton1.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.elButton1.Location = new System.Drawing.Point(31, 91);
-            this.elButton1.Name = "elButton1";
-            this.elButton1.Size = new System.Drawing.Size(96, 50);
-            this.elButton1.TabIndex = 4;
-            this.elButton1.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            this.elButton1.TextStyle.Text = "Salir";
-            this.elButton1.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackgroundImageStyle.Alpha = 100;
-            this.btnGuardar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnGuardar.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.BorderStyle.EdgeRadius = 7;
-            this.btnGuardar.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnGuardar.DropDownArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            this.btnGuardar.FlashStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            this.btnGuardar.FlashStyle.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.btnGuardar.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnGuardar.Location = new System.Drawing.Point(31, 37);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(96, 50);
-            this.btnGuardar.TabIndex = 3;
-            this.btnGuardar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
-            this.btnGuardar.TextStyle.Text = "Guardar";
-            this.btnGuardar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -305,12 +306,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.elPanel2)).EndInit();
             this.elPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.elRichLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel1)).EndInit();
             this.elPanel1.ResumeLayout(false);
             this.elPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.elRichLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.elButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 

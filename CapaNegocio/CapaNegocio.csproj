@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlumnoNegocio.cs" />
+    <Compile Include="CatalogoNegocio.cs" />
     <Compile Include="ConceptoNegocio.cs" />
     <Compile Include="EmpleadoNegocio.cs" />
     <Compile Include="MatriculaNegocio.cs" />
