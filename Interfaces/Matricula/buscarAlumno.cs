@@ -17,6 +17,9 @@ namespace Interfaces.Matricula
 
         AlumnoNegocio alumnoNeg = new AlumnoNegocio();
 
+        public int idAlumno { get; set; }
+     
+
         public buscarAlumno()
         {
             InitializeComponent();
@@ -40,6 +43,17 @@ namespace Interfaces.Matricula
 
 
 
+
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (dgvAlumno.DataSource != null)
+            {
+
+                 idAlumno = Convert.ToInt32(this.dgvAlumno.CurrentRow.Cells[0].Value.ToString());
+
+            }
 
         }
     }

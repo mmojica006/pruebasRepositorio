@@ -45,11 +45,12 @@
             this.txthora = new System.Windows.Forms.TextBox();
             this.elPanel2 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
             this.elRichLabel2 = new Klik.Windows.Forms.v1.EntryLib.ELRichLabel();
+            this.elButton1 = new Klik.Windows.Forms.v1.EntryLib.ELButton();
+            this.btnGuardar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.elButton1 = new Klik.Windows.Forms.v1.EntryLib.ELButton();
-            this.btnGuardar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel1)).BeginInit();
             this.elPanel1.SuspendLayout();
@@ -58,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.elRichLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // kFormManager1
@@ -109,6 +111,7 @@
             this.txtseccion.Name = "txtseccion";
             this.txtseccion.Size = new System.Drawing.Size(100, 20);
             this.txtseccion.TabIndex = 9;
+            this.txtseccion.Validating += new System.ComponentModel.CancelEventHandler(this.txtseccion_Validating);
             // 
             // label5
             // 
@@ -152,6 +155,7 @@
             // 
             this.txtAlumno.Location = new System.Drawing.Point(29, 37);
             this.txtAlumno.Name = "txtAlumno";
+            this.txtAlumno.ReadOnly = true;
             this.txtAlumno.Size = new System.Drawing.Size(369, 20);
             this.txtAlumno.TabIndex = 2;
             // 
@@ -200,37 +204,6 @@
             this.elRichLabel2.TabIndex = 5;
             this.elRichLabel2.Text = "Operaciones";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(38, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Fecha";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(38, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Hora";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 122);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Datos";
-            // 
             // elButton1
             // 
             this.elButton1.BackgroundImageStyle.Alpha = 100;
@@ -274,6 +247,41 @@
             this.btnGuardar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(38, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Fecha";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Location = new System.Drawing.Point(38, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Hora";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(15, 122);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Datos";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // addMatricula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,6 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.elRichLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.elButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGuardar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,5 +334,6 @@
         private System.Windows.Forms.ComboBox cmbNivel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

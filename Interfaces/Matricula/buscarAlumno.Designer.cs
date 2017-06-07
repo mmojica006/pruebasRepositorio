@@ -132,6 +132,7 @@
             this.btnAceptar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnAceptar.TextStyle.Text = "Aceptar";
             this.btnAceptar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // kFormManager1
             // 
