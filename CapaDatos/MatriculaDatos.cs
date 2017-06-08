@@ -85,28 +85,18 @@ namespace CapaDatos
 
             try
             {
-                cmd.Parameters.Add(new SqlParameter("@idMatricula", SqlDbType.Int));
-                cmd.Parameters["@idMatricula"].Value = eMatricula.idMatricula;
+               
 
                 cmd.Parameters.Add(new SqlParameter("@idAlumno", SqlDbType.Int));
                 cmd.Parameters["@idAlumno"].Value = eMatricula.idAlumno;
 
                 cmd.Parameters.Add(new SqlParameter("@idNivel", SqlDbType.Int));
-                cmd.Parameters["@idNivel"].Value = eMatricula.idNivel;
-
-
-                cmd.Parameters.Add(new SqlParameter("@periodo", SqlDbType.VarChar, 100));
-                cmd.Parameters["@periodo"].Value = eMatricula.periodo;
+                cmd.Parameters["@idNivel"].Value = eMatricula.idNivel;   
+         
 
                 cmd.Parameters.Add(new SqlParameter("@seccion", SqlDbType.VarChar, 20));
                 cmd.Parameters["@seccion"].Value = eMatricula.seccion;
-
-
-                cmd.Parameters.Add(new SqlParameter("@fecha", SqlDbType.Date));
-                cmd.Parameters["@fecha"].Value = eMatricula.fecha;
-
-                cmd.Parameters.Add(new SqlParameter("@hora", SqlDbType.Date));
-                cmd.Parameters["@hora"].Value = eMatricula.hora;
+       
 
 
                 cnx.Open();
@@ -179,6 +169,30 @@ namespace CapaDatos
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "pr_matricula_list";
                 cmd.Parameters.Add(new SqlParameter("@idNivel", idnivel));
+                SqlDataAdapter miada;
+                miada = new SqlDataAdapter(cmd);
+                miada.Fill(dts, "data");
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cmd.Parameters.Clear();
+            }
+            return (dts.Tables["data"]);
+        }
+
+        public DataTable BuscarMatricula(int idAlumno)
+        {
+            DataSet dts = new DataSet();
+            try
+            {
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pr_matricula_buscar";
+                cmd.Parameters.Add(new SqlParameter("@idAlumno", idAlumno));
                 SqlDataAdapter miada;
                 miada = new SqlDataAdapter(cmd);
                 miada.Fill(dts, "data");

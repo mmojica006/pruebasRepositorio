@@ -160,6 +160,12 @@
     <Compile Include="Matricula\buscarAlumno.Designer.cs">
       <DependentUpon>buscarAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Matricula\editMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matricula\editMatricula.Designer.cs">
+      <DependentUpon>editMatricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Matricula\frmMatricula.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Matricula\buscarAlumno.resx">
       <DependentUpon>buscarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matricula\editMatricula.resx">
+      <DependentUpon>editMatricula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Matricula\frmMatricula.resx">
       <DependentUpon>frmMatricula.cs</DependentUpon>

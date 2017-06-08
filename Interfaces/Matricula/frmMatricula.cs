@@ -85,6 +85,19 @@ namespace Interfaces.Matricula
         {
             if (gvEmpleado.DataSource != null)
             {
+                int idAlumno = Convert.ToInt32(this.gvEmpleado.CurrentRow.Cells[1].Value.ToString());
+
+                Matricula.editMatricula popUp = new Matricula.editMatricula(idAlumno);
+                DialogResult dialogResult = popUp.ShowDialog();
+                if (dialogResult == DialogResult.OK)
+                {
+
+
+
+
+                }
+
+
 
 
             }
