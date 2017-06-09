@@ -48,6 +48,7 @@
     <Compile Include="empleadoDatos.cs" />
     <Compile Include="MatriculaDatos.cs" />
     <Compile Include="NivelesDatos.cs" />
+    <Compile Include="PagosDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

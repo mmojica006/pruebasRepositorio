@@ -35,6 +35,7 @@
             this.alumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarAlumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conceptosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nivelesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.colaboradoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +47,6 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.nivelesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.kFormManager1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +100,13 @@
             this.conceptosToolStripMenuItem.Text = "Conceptos";
             this.conceptosToolStripMenuItem.Click += new System.EventHandler(this.conceptosToolStripMenuItem_Click);
             // 
+            // nivelesToolStripMenuItem1
+            // 
+            this.nivelesToolStripMenuItem1.Name = "nivelesToolStripMenuItem1";
+            this.nivelesToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
+            this.nivelesToolStripMenuItem1.Text = "Niveles";
+            this.nivelesToolStripMenuItem1.Click += new System.EventHandler(this.nivelesToolStripMenuItem1_Click);
+            // 
             // colaboradoresToolStripMenuItem
             // 
             this.colaboradoresToolStripMenuItem.Name = "colaboradoresToolStripMenuItem";
@@ -144,6 +151,7 @@
             this.pagoDeMatriculasToolStripMenuItem.Name = "pagoDeMatriculasToolStripMenuItem";
             this.pagoDeMatriculasToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.pagoDeMatriculasToolStripMenuItem.Text = "Pago de Matriculas";
+            this.pagoDeMatriculasToolStripMenuItem.Click += new System.EventHandler(this.pagoDeMatriculasToolStripMenuItem_Click);
             // 
             // inscripciónMatriculasPagosToolStripMenuItem
             // 
@@ -187,13 +195,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "COLEGIO PRIMERA IGLESIA DE CRISTO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // nivelesToolStripMenuItem1
-            // 
-            this.nivelesToolStripMenuItem1.Name = "nivelesToolStripMenuItem1";
-            this.nivelesToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
-            this.nivelesToolStripMenuItem1.Text = "Niveles";
-            this.nivelesToolStripMenuItem1.Click += new System.EventHandler(this.nivelesToolStripMenuItem1_Click);
             // 
             // frmMenus
             // 

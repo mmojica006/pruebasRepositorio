@@ -196,6 +196,12 @@
     <Compile Include="nivel\registroNivel.Designer.cs">
       <DependentUpon>registroNivel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pagos\frmPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagos\frmPagos.Designer.cs">
+      <DependentUpon>frmPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="PopAddConcepto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nivel\registroNivel.resx">
       <DependentUpon>registroNivel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagos\frmPagos.resx">
+      <DependentUpon>frmPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopAddConcepto.resx">
       <DependentUpon>PopAddConcepto.cs</DependentUpon>

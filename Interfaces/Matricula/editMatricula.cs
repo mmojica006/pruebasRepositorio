@@ -109,5 +109,10 @@ namespace Interfaces.Matricula
             else
                 errorProvider1.SetError(txtseccion, "");
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

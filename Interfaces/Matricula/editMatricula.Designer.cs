@@ -205,6 +205,7 @@
             this.btnBuscar.Text = "...";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Visible = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label6
             // 

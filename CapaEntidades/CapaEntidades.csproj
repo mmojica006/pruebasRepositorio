@@ -45,6 +45,7 @@
     <Compile Include="Eempleado.cs" />
     <Compile Include="EMatricula.cs" />
     <Compile Include="ENiveles.cs" />
+    <Compile Include="Epagos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

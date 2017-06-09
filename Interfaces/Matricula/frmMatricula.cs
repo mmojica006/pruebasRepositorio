@@ -92,7 +92,7 @@ namespace Interfaces.Matricula
                 if (dialogResult == DialogResult.OK)
                 {
 
-
+                    llenarData();
 
 
                 }

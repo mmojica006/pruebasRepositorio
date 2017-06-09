@@ -70,5 +70,11 @@ namespace Interfaces
             nivel.frmNivel _nivel = new nivel.frmNivel();
             _nivel.Show();
         }
+
+        private void pagoDeMatriculasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Pagos.frmPagos _pagos = new Pagos.frmPagos();
+            _pagos.Show();
+        }
     }
 }
