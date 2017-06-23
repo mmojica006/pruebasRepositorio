@@ -74,6 +74,35 @@ namespace CapaDatos
         }
 
 
+        public DataTable listarConceptos(int idMatricula)
+        {
+            DataSet dts = new DataSet();
+            try
+            {
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pr_pagos_pendientes";
+
+                cmd.Parameters.Add(new SqlParameter("@idMatricula", idMatricula));
+               
+
+
+                SqlDataAdapter miada;
+                miada = new SqlDataAdapter(cmd);
+                miada.Fill(dts, "data");
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cmd.Parameters.Clear();
+            }
+            return (dts.Tables["data"]);
+        }
+
+
 
     }
 }

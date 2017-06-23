@@ -28,6 +28,7 @@ namespace Interfaces.Pagos
         AlumnoNegocio alumnoNeg = new AlumnoNegocio();
 
         public int v_idAlumno { get; set; }
+        public int idMatricula { get; set; }
 
         public frmPagos()
         {
@@ -92,6 +93,7 @@ namespace Interfaces.Pagos
                     string nombreAlumno = dt.Rows[0]["Nombres"].ToString() + " " + dt.Rows[0]["Apellidos"].ToString();
 
                     v_idAlumno = Convert.ToInt32(dt.Rows[0]["idAlumno"].ToString());
+                   // idMatricula = dt.Rows[0][""]
 
 
                     txtAlumno.Text = nombreAlumno;
@@ -107,5 +109,19 @@ namespace Interfaces.Pagos
         {
             habilitarControles();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Pagos.frm_pagos_lista popPop = new Pagos.frm_pagos_lista(1);
+            DialogResult dialogResult = popPop.ShowDialog();
+
+            if (dialogResult == DialogResult.OK)
+            {
+
+            }
+
+
+
+            }
     }
 }
