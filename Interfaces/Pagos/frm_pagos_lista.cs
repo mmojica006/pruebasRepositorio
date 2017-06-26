@@ -15,6 +15,7 @@ namespace Interfaces.Pagos
     public partial class frm_pagos_lista : Form
     {
         PagosNegocio pagosNeg = new PagosNegocio();
+        public int idConcepto { get; set; }
 
         public frm_pagos_lista( int idMatricula)
         {
@@ -39,6 +40,17 @@ namespace Interfaces.Pagos
 
         private void frm_pagos_lista_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (dgvLista.DataSource != null)
+
+            {
+                idConcepto = Convert.ToInt32(this.dgvLista.CurrentRow.Cells[0].Value.ToString());
+            }
+
 
         }
     }

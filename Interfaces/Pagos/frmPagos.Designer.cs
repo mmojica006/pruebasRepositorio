@@ -44,10 +44,7 @@
             this.btnLimpiar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.btnQuitar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.btnAgregar = new Klik.Windows.Forms.v1.EntryLib.ELButton();
-            this.gvPagos = new Klik.Windows.Forms.v1.EntryLib.ELDataGridView();
-            this.IdConcepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Concepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPagos = new Klik.Windows.Forms.v1.EntryLib.ELDataGridView();
             this.elPanel3 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
             this.btnSalir = new Klik.Windows.Forms.v1.EntryLib.ELButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,7 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnQuitar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPagos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel3)).BeginInit();
             this.elPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
@@ -209,15 +206,11 @@
             this.btnAgregar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // gvPagos
+            // dgvPagos
             // 
-            this.gvPagos.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            this.gvPagos.BackgroundStyle.SolidColor = System.Drawing.SystemColors.Window;
-            this.gvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdConcepto,
-            this.Concepto,
-            this.Importe});
+            this.dgvPagos.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            this.dgvPagos.BackgroundStyle.SolidColor = System.Drawing.SystemColors.Window;
+            this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -225,27 +218,12 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvPagos.DefaultCellStyle = dataGridViewCellStyle1;
-            this.gvPagos.GridColor = System.Drawing.Color.LightGray;
-            this.gvPagos.Location = new System.Drawing.Point(12, 173);
-            this.gvPagos.Name = "gvPagos";
-            this.gvPagos.Size = new System.Drawing.Size(537, 150);
-            this.gvPagos.TabIndex = 3;
-            // 
-            // IdConcepto
-            // 
-            this.IdConcepto.HeaderText = "IdConcepto";
-            this.IdConcepto.Name = "IdConcepto";
-            // 
-            // Concepto
-            // 
-            this.Concepto.HeaderText = "Concepto";
-            this.Concepto.Name = "Concepto";
-            // 
-            // Importe
-            // 
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
+            this.dgvPagos.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPagos.GridColor = System.Drawing.Color.LightGray;
+            this.dgvPagos.Location = new System.Drawing.Point(12, 173);
+            this.dgvPagos.Name = "dgvPagos";
+            this.dgvPagos.Size = new System.Drawing.Size(537, 150);
+            this.dgvPagos.TabIndex = 3;
             // 
             // elPanel3
             // 
@@ -377,7 +355,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.elPanel3);
-            this.Controls.Add(this.gvPagos);
+            this.Controls.Add(this.dgvPagos);
             this.Controls.Add(this.elPanel2);
             this.Controls.Add(this.elPanel1);
             this.DoubleBuffered = true;
@@ -392,7 +370,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnLimpiar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnQuitar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPagos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.elPanel3)).EndInit();
             this.elPanel3.ResumeLayout(false);
             this.elPanel3.PerformLayout();
@@ -410,7 +388,7 @@
         private Klik.Windows.Forms.v1.Common.KFormManager kFormManager1;
         private Klik.Windows.Forms.v1.EntryLib.ELPanel elPanel1;
         private Klik.Windows.Forms.v1.EntryLib.ELPanel elPanel2;
-        private Klik.Windows.Forms.v1.EntryLib.ELDataGridView gvPagos;
+        private Klik.Windows.Forms.v1.EntryLib.ELDataGridView dgvPagos;
         private System.Windows.Forms.TextBox txtAlumno;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -421,9 +399,6 @@
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnLimpiar;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnQuitar;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnAgregar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdConcepto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Concepto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private Klik.Windows.Forms.v1.EntryLib.ELPanel elPanel3;
         private Klik.Windows.Forms.v1.EntryLib.ELButton btnSalir;
         private System.Windows.Forms.Label label4;

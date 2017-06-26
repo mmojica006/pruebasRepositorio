@@ -57,7 +57,7 @@ namespace Interfaces.Matricula
         private void llenarData(int idAlumno)
         {
             DataTable dt;
-            dt = matriculaNeg.Buscar(idAlumno);
+            dt = matriculaNeg.BuscarMatriculoAlumno(idAlumno);
 
             txtseccion.Text = dt.Rows[0]["seccion"].ToString();
             txtAlumno.Text = dt.Rows[0]["Nombres"].ToString();

@@ -34,7 +34,7 @@ namespace CapaNegocio
             return matriculaDatos.listarMatriculas(idNivel);
         }
 
-        public DataTable Buscar(int Alumno)
+        public DataTable BuscarMatriculoAlumno(int Alumno)
         {
             return matriculaDatos.BuscarMatricula(Alumno);
         }
