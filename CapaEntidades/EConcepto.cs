@@ -12,6 +12,7 @@ namespace CapaEntidades
         public String Nombre { get; set; }
         public DateTime FechaVenc { get; set; }
         public decimal Precio { get; set; }
+        public String Estado { get; set; }
 
         public string msgResp { get; set; }
 

@@ -10,8 +10,7 @@ using System.Windows.Forms;
 using CapaEntidades;
 using CapaNegocio;
 using Interfaces.Helpers;
-
-
+using System.Collections;
 
 namespace Interfaces.Pagos
 {
@@ -31,8 +30,18 @@ namespace Interfaces.Pagos
         Epagos _epagos = new Epagos();
         PagosNegocio pagosNegocio = new PagosNegocio();
 
+        EConcepto _econcepto = new EConcepto();
         ConceptoNegocio _conceptoNegocio = new ConceptoNegocio();
 
+
+        DataTable dtTable = new DataTable();
+
+        private DataTable _dtTable;
+        public DataTable DtTable
+        {
+            get { return _dtTable; }
+            set { _dtTable = value; }
+        }
 
         public int v_idAlumno { get; set; }
         public int MmatriculaId { get; set; }
@@ -129,34 +138,115 @@ namespace Interfaces.Pagos
             Pagos.frm_pagos_lista popPop = new Pagos.frm_pagos_lista(MmatriculaId);
             DialogResult dialogResult = popPop.ShowDialog();
             int idconcepto = popPop.idConcepto;
-           
+
 
             if (dialogResult == DialogResult.OK)
             {
-           
+                DataTable dtAll = new DataTable();
 
 
+                dtAll = _conceptoNegocio.listarconcepto(idconcepto);
+
+                //DataRow dr = dtTable.NewRow();
+                //dtTable.Rows.Add(dr);
+                //dgvPagos.DataSource = dtTable;
+                if (dgvPagos.Columns.Contains("IdConcepto") && dgvPagos.Columns["IdConcepto"].Visible)
+                {
+
+              
+                dgvPagos.Columns.Add("IdConcepto", "ID");
+                dgvPagos.Columns.Add("Nombre","Nombre");
+                dgvPagos.Columns.Add("FechaVencimiento", "Fec Vencimiento");
+                dgvPagos.Columns.Add("Precio", "Precio");
+                dgvPagos.Columns.Add("Estado", "Estado");
+
+                dgvPagos.Columns[0].Width = 50;
+                dgvPagos.Columns[1].Width = 150;
+                dgvPagos.Columns[2].Width = 120;
+                dgvPagos.Columns[4].Width = 50;
+                }
+
+
+
+                //foreach (DataColumn dc in dtAll.Columns)
+                //{
+
+                //    dgvPagos.Columns.Add(new DataGridViewTextBoxColumn());
+
+                //}
+                foreach (DataRow dr2 in dtAll.Rows)
+                {
+
+                    dgvPagos.Rows.Add(dr2.ItemArray);
+
+                }
 
                 // DataTable dt = _conceptoNegocio.listarconcepto(idconcepto) as DataTable;
                 // dgvPagos.DataSource = dt;
-                        DataTable dt = new DataTable();
-                dt=_conceptoNegocio.listarconcepto(idconcepto);
-             //   Session.Add("conceptos", dt);
+                //DataTable dt = new DataTable();
+
+
+
+                //  dt = _conceptoNegocio.listarconcepto(idconcepto);
+
+                //  SaveData(idconcepto);
+
+
+
+                // dtAll = this.DtTable;
 
 
 
 
 
-                var bindingSource = new BindingSource();
-                bindingSource.DataSource = dt;
-                dgvPagos.DataSource = bindingSource;
-
-                bindingSource.ResetBindings(false);
 
 
+
+
+
+
+
+                //   Session.Add("conceptos", dt);
+
+
+
+
+
+                //    var bindingSource = new BindingSource();
+                //bindingSource.DataSource = this.DtTable;
+                //dgvPagos.DataSource = bindingSource;
+                //bindingSource.ResetBindings(false);
+
+
+
+                // dgvPagos.DataSource = dtAll;
 
 
             }
+
+
+
+        }
+
+        private void SaveData(int id)
+        {
+            DataTable dt;
+            dt = _conceptoNegocio.listarconcepto(id);
+
+            List<EConcepto> ConceptosList = new List<EConcepto>();
+            ConceptosList = (from DataRow dr in dt.Rows
+                             select new EConcepto()
+                             {
+                                 IdConcepto = Convert.ToInt32(dr["IdConcepto"].ToString()),
+                                 Nombre = dr["Nombre"].ToString(),
+                                 FechaVenc = Convert.ToDateTime(dr["FechaVencimiento"].ToString()),
+                                 Precio = Convert.ToDecimal(dr["Precio"]),
+                                 Estado = dr["Estado"].ToString()
+
+
+
+
+                             }).ToList();
 
 
 
