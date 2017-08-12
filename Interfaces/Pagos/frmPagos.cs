@@ -46,6 +46,8 @@ namespace Interfaces.Pagos
         public int v_idAlumno { get; set; }
         public int MmatriculaId { get; set; }
 
+        public bool existe = false;
+
         public frmPagos()
         {
             InitializeComponent();
@@ -66,6 +68,18 @@ namespace Interfaces.Pagos
 
 
             bloquearControles();
+            agregarColumGridView();
+  
+
+        }
+
+        private void agregarColumGridView()
+        {
+            dgvPagos.Columns.Add("IdConcepto", "ID");
+            dgvPagos.Columns.Add("Nombre", "Nombre");
+            dgvPagos.Columns.Add("FechaVencimiento", "Vencimiento");
+            dgvPagos.Columns.Add("Precio", "Precio");
+            dgvPagos.Columns.Add("Estado", "Estado");
         }
 
         private void bloquearControles()
@@ -150,21 +164,15 @@ namespace Interfaces.Pagos
                 //DataRow dr = dtTable.NewRow();
                 //dtTable.Rows.Add(dr);
                 //dgvPagos.DataSource = dtTable;
-                if (dgvPagos.Columns.Contains("IdConcepto") && dgvPagos.Columns["IdConcepto"].Visible)
-                {
-
+           
               
-                dgvPagos.Columns.Add("IdConcepto", "ID");
-                dgvPagos.Columns.Add("Nombre","Nombre");
-                dgvPagos.Columns.Add("FechaVencimiento", "Fec Vencimiento");
-                dgvPagos.Columns.Add("Precio", "Precio");
-                dgvPagos.Columns.Add("Estado", "Estado");
+           
 
                 dgvPagos.Columns[0].Width = 50;
                 dgvPagos.Columns[1].Width = 150;
                 dgvPagos.Columns[2].Width = 120;
                 dgvPagos.Columns[4].Width = 50;
-                }
+
 
 
 
@@ -174,12 +182,36 @@ namespace Interfaces.Pagos
                 //    dgvPagos.Columns.Add(new DataGridViewTextBoxColumn());
 
                 //}
+                //string output = "";
                 foreach (DataRow dr2 in dtAll.Rows)
                 {
+                    Console.WriteLine("----------------Row-------------------");
+                    //for (int i = 0; i < dgvPagos.Rows.Count; i++)
+                    //    dgvPagos.Rows.Add(dr2.ItemArray);
 
+                    //foreach (var item in dr2.ItemArray){
+                    //    Console.Write("Item: ");
+                    //    Console.WriteLine(item);
+                    //    dgvPagos.Rows.Add(item);
+                    //}
+
+
+                    Console.WriteLine(dr2.ItemArray[0]);
+
+
+                    // if (dr2.ItemArray[0]) 
+
+                    existeConcepto(Convert.ToInt32( dr2.ItemArray[0]));
                     dgvPagos.Rows.Add(dr2.ItemArray);
 
+
+
+
+
+                    //   Console.WriteLine(dr2["IdConcepto"]);  
                 }
+
+               // Console.Read();
 
                 // DataTable dt = _conceptoNegocio.listarconcepto(idconcepto) as DataTable;
                 // dgvPagos.DataSource = dt;
@@ -194,16 +226,6 @@ namespace Interfaces.Pagos
 
 
                 // dtAll = this.DtTable;
-
-
-
-
-
-
-
-
-
-
 
 
                 //   Session.Add("conceptos", dt);
@@ -227,6 +249,30 @@ namespace Interfaces.Pagos
 
 
         }
+
+        private bool existeConcepto(int idconcepto)
+        {
+  
+            String searchValue = Convert.ToString(idconcepto);  //Textbox1 -> Search Key Word
+            int rowIndex = -1;
+            foreach (DataGridViewRow row in dgvPagos.Rows)
+            {
+                if (row.Cells[0].Value != null)
+                {
+                    if (row.Cells[0].Value.ToString().ToLower().Equals(searchValue.ToLower()))
+                    {
+                        rowIndex = row.Index;
+                        dgvPagos.Rows[rowIndex].Selected = true;
+                        dgvPagos.FirstDisplayedScrollingRowIndex = rowIndex;
+                        break;
+                        existe = true;
+                    }
+                }
+            }
+
+            return existe;
+        }
+
 
         private void SaveData(int id)
         {
