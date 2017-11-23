@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstudiantes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kFormManager1 = new Klik.Windows.Forms.v1.Common.KFormManager(this.components);
             this.kStyleManager1 = new Klik.Windows.Forms.v1.Common.KStyleManager(this.components);
             this.elPanel2 = new Klik.Windows.Forms.v1.EntryLib.ELPanel();
@@ -87,7 +87,7 @@
             // btnPopBuscar
             // 
             this.btnPopBuscar.BackgroundImageStyle.Alpha = 100;
-            this.btnPopBuscar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnPopBuscar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnPopBuscar.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPopBuscar.BorderStyle.EdgeRadius = 7;
             this.btnPopBuscar.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
@@ -119,14 +119,14 @@
             this.gvEstudiante.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.gvEstudiante.BackgroundStyle.SolidColor = System.Drawing.SystemColors.Window;
             this.gvEstudiante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvEstudiante.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvEstudiante.DefaultCellStyle = dataGridViewCellStyle2;
             this.gvEstudiante.GridColor = System.Drawing.Color.LightGray;
             this.gvEstudiante.Location = new System.Drawing.Point(27, 80);
             this.gvEstudiante.Name = "gvEstudiante";
@@ -166,6 +166,7 @@
             this.btnSalir.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnSalir.TextStyle.Text = "Salir";
             this.btnSalir.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label1
             // 
@@ -220,7 +221,7 @@
             // btnEliminar
             // 
             this.btnEliminar.BackgroundImageStyle.Alpha = 100;
-            this.btnEliminar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            this.btnEliminar.BackgroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnEliminar.BackgroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.BorderStyle.EdgeRadius = 7;
             this.btnEliminar.BorderStyle.SmoothingMode = Klik.Windows.Forms.v1.Common.SmoothingModes.AntiAlias;
@@ -236,6 +237,7 @@
             this.btnEliminar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnEliminar.TextStyle.Text = "Eliminar";
             this.btnEliminar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 

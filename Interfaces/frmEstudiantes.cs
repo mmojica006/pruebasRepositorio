@@ -67,5 +67,36 @@ namespace Interfaces
         {
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea borrar el registro?", "Formulario para eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                idAlumno = Convert.ToInt32(this.gvEstudiante.CurrentRow.Cells[0].Value.ToString(), null);
+
+                eAlumnos.idAlumno = idAlumno;
+
+                if (alumnoNeg.eliminarAlumno(eAlumnos))
+                {
+
+                    MessageBox.Show(eAlumnos.mensageResp, "Eliminando Registro");
+                    mostrarAlumnos();
+
+                }
+                else
+                {
+                    MessageBox.Show(eAlumnos.mensageResp, "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+
+
+        }
     }
 }

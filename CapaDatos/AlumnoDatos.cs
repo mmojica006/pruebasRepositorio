@@ -166,15 +166,21 @@ namespace CapaDatos
         {
             cmd.Connection = cnx;
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "pr_alumno_eliminar";
+            cmd.CommandText = "pr_borraralumno";
             try
             {
-                cmd.Parameters.Add(new SqlParameter("@p_codigo", SqlDbType.Int));
-                cmd.Parameters["@p_codigo"].Value = mcEntidad.idAlumno;
-                cmd.Parameters.Add(new SqlParameter("@estado", SqlDbType.Char,1));
-                cmd.Parameters["@estado"].Value = mcEntidad.dstado;
+                cmd.Parameters.Add(new SqlParameter("@cod", SqlDbType.Int));
+                cmd.Parameters["@cod"].Value = mcEntidad.idAlumno;
+
+                cmd.Parameters.Add(new SqlParameter("@msj", SqlDbType.VarChar, 100));
+                cmd.Parameters["@msj"].Direction = ParameterDirection.Output;
+  
                 cnx.Open();
                 cmd.ExecuteNonQuery();
+
+                //read output value
+                string message = Convert.ToString( cmd.Parameters["@msj"].Value);
+                mcEntidad.mensageResp = message;
                 vexito = true;
             }
             catch (SqlException ex)

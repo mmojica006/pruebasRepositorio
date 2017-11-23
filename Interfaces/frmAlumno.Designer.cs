@@ -170,6 +170,7 @@
             this.btnEliminar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnEliminar.TextStyle.Text = "Eliminar";
             this.btnEliminar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
