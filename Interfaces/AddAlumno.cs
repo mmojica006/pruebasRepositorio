@@ -76,7 +76,7 @@ namespace Interfaces
                 AlumnoEnti.cedula = txtcedula.Text;
                 AlumnoEnti.nombres = txtnombre.Text;
                 AlumnoEnti.napellidos = txtapellido.Text;
-                AlumnoEnti.celular = Convert.ToInt32(txtcelular.Text);
+                AlumnoEnti.celular = int.Parse( txtcelular.Text);
                 AlumnoEnti.telefono = txttelefono.Text;
                 AlumnoEnti.direccion = txtDireccion.Text;
                 AlumnoEnti.fechaNac = Convert.ToDateTime(dtpfNacimiento.Text);

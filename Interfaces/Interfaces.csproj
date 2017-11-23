@@ -196,6 +196,12 @@
     <Compile Include="nivel\registroNivel.Designer.cs">
       <DependentUpon>registroNivel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pagos\frmBuscarAlumnosMatriculados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagos\frmBuscarAlumnosMatriculados.Designer.cs">
+      <DependentUpon>frmBuscarAlumnosMatriculados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pagos\frmPagos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nivel\registroNivel.resx">
       <DependentUpon>registroNivel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagos\frmBuscarAlumnosMatriculados.resx">
+      <DependentUpon>frmBuscarAlumnosMatriculados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pagos\frmPagos.resx">
       <DependentUpon>frmPagos.cs</DependentUpon>

@@ -192,6 +192,7 @@
             this.btnQuitar.TabIndex = 2;
             this.btnQuitar.TextStyle.Text = "Quitar";
             this.btnQuitar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnAgregar
             // 
@@ -327,6 +328,7 @@
             this.btnGuardar.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(66)))), ((int)(((byte)(139)))));
             this.btnGuardar.TextStyle.Text = "Guardar";
             this.btnGuardar.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtTotal
             // 

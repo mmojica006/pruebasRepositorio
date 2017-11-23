@@ -44,7 +44,7 @@ namespace Interfaces.Pagos
         }
 
         public int v_idAlumno { get; set; }
-        public int MmatriculaId { get; set; }
+        public int MatriculaId { get; set; }
 
         public bool existe = false;
 
@@ -109,7 +109,7 @@ namespace Interfaces.Pagos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Matricula.buscarAlumno popUp = new Matricula.buscarAlumno();
+            frmBuscarAlumnosMatriculados popUp = new frmBuscarAlumnosMatriculados();
             DataTable dt;
             DataTable dtMatricula;
             DialogResult dialogResult = popUp.ShowDialog();
@@ -124,13 +124,15 @@ namespace Interfaces.Pagos
                     string nombreAlumno = dt.Rows[0]["Nombres"].ToString() + " " + dt.Rows[0]["Apellidos"].ToString();
 
                     v_idAlumno = Convert.ToInt32(dt.Rows[0]["idAlumno"].ToString());
+                    MatriculaId = popUp.idMatriculaBuscar;
 
-                    dtMatricula = matriculaNeg.BuscarMatriculoAlumno(v_idAlumno);
-                    if (dtMatricula.Rows.Count > 1)
-                    {
-                        MmatriculaId = Convert.ToInt32( dtMatricula.Rows[0]["idmatricula"].ToString());
+                    //dtMatricula = matriculaNeg.BuscarMatriculoAlumno(v_idAlumno);
 
-                    }
+                    //if (dtMatricula.Rows.Count > 1)
+                    //{
+                    //    MatriculaId = Convert.ToInt32( dtMatricula.Rows[0]["idmatricula"].ToString());
+
+                    //}
 
 
                     txtAlumno.Text = nombreAlumno;
@@ -149,10 +151,10 @@ namespace Interfaces.Pagos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Pagos.frm_pagos_lista popPop = new Pagos.frm_pagos_lista(MmatriculaId);
+            Pagos.frm_pagos_lista popPop = new Pagos.frm_pagos_lista(MatriculaId);
             DialogResult dialogResult = popPop.ShowDialog();
             int idconcepto = popPop.idConcepto;
-
+          
 
             if (dialogResult == DialogResult.OK)
             {
@@ -211,6 +213,8 @@ namespace Interfaces.Pagos
                     //   Console.WriteLine(dr2["IdConcepto"]);  
                 }
 
+                CalcularPrecio();
+
                // Console.Read();
 
                 // DataTable dt = _conceptoNegocio.listarconcepto(idconcepto) as DataTable;
@@ -248,6 +252,17 @@ namespace Interfaces.Pagos
 
 
 
+        }
+
+        private void CalcularPrecio()
+        {
+            double sumatoria = 0;
+
+            foreach (DataGridViewRow row in dgvPagos.Rows)
+            {
+                sumatoria += Convert.ToDouble(row.Cells[3].Value);
+            }
+            txtTotal.Text = Convert.ToString(sumatoria);
         }
 
         private bool existeConcepto(int idconcepto)
@@ -296,6 +311,52 @@ namespace Interfaces.Pagos
 
 
 
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+            if ( txtAlumno.Text != "") {
+
+                foreach (DataGridViewRow row in dgvPagos.Rows){
+
+                    _epagos.idConcepto = Convert.ToInt32( row.Cells["IdConcepto"].Value.ToString());
+                    _epagos.idMatricula = MatriculaId;
+                    _epagos.fecha = Convert.ToDateTime( txtFecha.Text);
+                    _epagos.hora = txtHora.Text;
+                    _epagos.Total = Convert.ToDecimal( txtTotal.Text);
+                    
+                    if (!pagosNegocio.addPago(_epagos)){
+
+                        MessageBox.Show("Ha ocurrido un error.",
+                      "Pagos",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Error,
+                      MessageBoxDefaultButton.Button1);
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Pago realizado.",
+                 "Pagos",
+                 MessageBoxButtons.OK,
+                 MessageBoxIcon.Exclamation,
+                 MessageBoxDefaultButton.Button1);
+                    }   
+
+                }
+
+
+
+            }
+
+            
         }
     }
 }

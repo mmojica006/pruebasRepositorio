@@ -33,6 +33,9 @@ namespace Interfaces.Matricula
                 dgvAlumno.DataSource = alumnoNeg.consultarAlumno(0, txtAlumno.Text.Trim());
 
             }
+
+
+
         }
 
         private void mostrarAlumnos()
@@ -54,6 +57,21 @@ namespace Interfaces.Matricula
                  idAlumno = Convert.ToInt32(this.dgvAlumno.CurrentRow.Cells[0].Value.ToString());
 
             }
+
+        }
+
+        private void dgvAlumno_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAlumno_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -8,6 +8,7 @@ namespace CapaEntidades
 {
    public  class Epagos
     {
+        public int idConcepto { get; set; }
 
         public int idPago { get; set; }
         public int idMatricula { get; set; }

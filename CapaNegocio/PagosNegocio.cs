@@ -17,5 +17,16 @@ namespace CapaNegocio
         {
             return _pagosDatos.listarConceptos(idMatricula);
         }
+
+     public bool addPago(Epagos epagos)
+        {
+            return _pagosDatos.agregarPago(epagos);
+        }
+
+        public DataTable consultaMatAlumno(int idAlumno, string nombre) {
+
+            return _pagosDatos.listAlumnosMatriculados(idAlumno, nombre);
+        }
+
     }
 }

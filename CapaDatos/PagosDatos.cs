@@ -31,6 +31,10 @@ namespace CapaDatos
 
             try
             {
+                cmd.Parameters.Add(new SqlParameter("@idConcepto", SqlDbType.Int));
+                cmd.Parameters["@idConcepto"].Value = _epagos.idConcepto;
+
+
                 cmd.Parameters.Add(new SqlParameter("@idmatricula", SqlDbType.Int));
                 cmd.Parameters["@idmatricula"].Value = _epagos.idMatricula;
 
@@ -44,11 +48,13 @@ namespace CapaDatos
                 cmd.Parameters.Add(new SqlParameter("@total", SqlDbType.Decimal));
                 cmd.Parameters["@total"].Value = _epagos.Total;
 
-        
+                   
 
-
+                                               
                 cnx.Open();
                 cmd.ExecuteNonQuery();
+               
+
                 exito = true;
 
 
@@ -56,6 +62,7 @@ namespace CapaDatos
             }
             catch (SqlException ex)
             {
+                throw new Exception(ex.Message);
 
             }
             finally
@@ -101,6 +108,45 @@ namespace CapaDatos
             }
             return (dts.Tables["data"]);
         }
+
+        public DataTable listAlumnosMatriculados(int idAlumno, string nombre)
+        {
+            DataSet dts = new DataSet();
+            try
+            {
+                cmd.Connection = cnx;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pr_pagos_alum_mat";
+
+                cmd.Parameters.Add(new SqlParameter("@id_alumno", idAlumno));
+
+                if (nombre == null){
+                    cmd.Parameters.Add(new SqlParameter("@p_nombre", null));
+                }
+                else
+                {
+                    cmd.Parameters.Add(new SqlParameter("@p_nombre", nombre));
+                }
+
+              
+
+
+
+                SqlDataAdapter miada;
+                miada = new SqlDataAdapter(cmd);
+                miada.Fill(dts, "data");
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                cmd.Parameters.Clear();
+            }
+            return (dts.Tables["data"]);
+        }
+
 
 
 
